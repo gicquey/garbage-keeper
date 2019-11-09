@@ -22,5 +22,22 @@
     #region Game
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
+    public enum AmmoType
+    {
+        regular,
+        explosive,
+        poison,
+        puddle,
+        clothes,
+        battery
+    };
+    [Flags]
+    public enum Elements
+    {
+        organic,
+        chimical,
+        fabric,
+        solid,
+    };
     #endregion
 }
