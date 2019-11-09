@@ -74,6 +74,7 @@ public class Ennemi : MonoBehaviour
     //Branch to event in dying animation
     public void OnDyingAnimationOver()
     {
-        GameManager.Instance.Lo
+        GameManager.Instance.LoseLife(Settings.Instance.lifeLostPerEnnemy);
+        Destroy(this.gameObject);
     }
 }
