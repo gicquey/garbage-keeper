@@ -119,7 +119,7 @@ public class Ennemi : MonoBehaviour
                 break;
 
             case Settings.AmmoType.explosive:
-                foreach(var ennemyInRange in GameObject.FindObjectsOfType<Ennemi>().Where(ennemy => Vector3.Distance(this.transform.position, ennemy.transform.position) <= Settings.Instance.explosionsRange))
+                foreach(var ennemyInRange in EnnemyGenerator.Instance.AliveEnnemies.Where(ennemy => Vector3.Distance(this.transform.position, ennemy.transform.position) <= Settings.Instance.explosionsRange))
                 {
                     ennemyInRange.TakeDamage(Settings.Instance.explosionSideEffectDamage);
                 }
@@ -136,6 +136,7 @@ public class Ennemi : MonoBehaviour
         if(_currentLife <= 0)
         {
             _dying = true;
+            EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
             this.GetComponent<Animator>().SetTrigger("DyingDamage");
         }
     }
@@ -166,6 +167,7 @@ public class Ennemi : MonoBehaviour
 
     private void ReachPathEnd()
     {
+        EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
         _dying = true;
         this.GetComponent<Animator>().SetTrigger("DyingEnd");
         _nextCheckpoint = null;
