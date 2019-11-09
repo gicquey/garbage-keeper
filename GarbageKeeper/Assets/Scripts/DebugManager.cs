@@ -4,6 +4,8 @@ public class DebugManager : MonoBehaviour
 {
     public bool showExplosionRangeAroundExplosives = false;
 
+    public int currentMoney;
+
     private static DebugManager _instance = null;
     public static DebugManager Instance
     {
@@ -23,5 +25,10 @@ public class DebugManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Update()
+    {
+        currentMoney = GameManager.Instance.CurrentMoney;
     }
 }

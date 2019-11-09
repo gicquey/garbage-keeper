@@ -23,6 +23,10 @@ public class Settings
     #endregion
 
     #region Game
+    public int initialMoney = 100;
+    public int turretCost = 50;
+    public int moneyGainedOnRecycleTurret = 25;
+
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
     public enum AmmoType
