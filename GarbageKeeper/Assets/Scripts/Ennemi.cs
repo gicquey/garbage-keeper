@@ -2,9 +2,16 @@
 using System.Linq;
 using UnityEngine;
 
+public enum EnnemyTypes
+{
+    NORMAL,
+    FLYING
+}
+
 [RequireComponent(typeof(Animator))]
 public class Ennemi : MonoBehaviour
 {
+    public EnnemyTypes ennemyType;
     public float maxLife = 50f;
     public float baseMovingSpeed = 0.05f;
 
