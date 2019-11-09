@@ -1,18 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameManager : MonoBehaviour
+﻿public class GameManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public MainScene mainScene;
+
+    private static GameManager _instance = null;
+    public static GameManager Instance
     {
-        
+        get
+        {
+            if (_instance == null)
+                _instance = new GameManager();
+            return _instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private float _currentLife = 0;
+
+    private GameManager()
     {
-        
+        _currentLife = Settings.Instance.lifeMax;
+    }
+
+    public void LoseLife(float amount)
+    {
+        _currentLife -= amount;
+        mainScene.RefreshLifeIndicator();
+        if(_currentLife < 0)
+        {
+            //Game over
+        }
     }
 }
