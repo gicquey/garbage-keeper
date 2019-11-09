@@ -1,4 +1,7 @@
-﻿public class Settings
+﻿using System;
+using System.Collections.Generic;
+
+public class Settings
 {
     private static Settings _instance;
 
@@ -39,5 +42,35 @@
         fabric,
         solid,
     };
+
+    public Dictionary<EffectTypes, float> TimeToLiveByEffectType = new Dictionary<EffectTypes, float>()
+    {
+        { EffectTypes.DAMAGE_OVER_TIME, 3f},
+        { EffectTypes.SLOW_DOWN, 5f }
+    };
+
+    public Dictionary<EffectTypes, float> TimeBetweenActivationsByEffectType = new Dictionary<EffectTypes, float>()
+    {
+        { EffectTypes.DAMAGE_OVER_TIME, 1f},
+        { EffectTypes.SLOW_DOWN, 0f }
+    };
+
+    public Dictionary<AmmoType, float> DamageByAmmoType = new Dictionary<AmmoType, float>()
+    {
+        {AmmoType.regular, 1f },
+        {AmmoType.explosive, 1f },
+        {AmmoType.poison, 1f },
+        {AmmoType.puddle, 1f },
+        {AmmoType.clothes, 1f },
+        {AmmoType.battery, 1f }
+    };
+
+    public float damageOverTimeDamageByActivation = 1f;
+    public float explosionSideEffectDamage = 1f;
+    public float slowDownSpeedModifier = 0.5f;
+
+    public float projectilesSpeed = 1f;
+    public float turretsNormalRange = 15f;
+    public float explosionsRange = 10f;
     #endregion
 }
