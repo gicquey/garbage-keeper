@@ -70,9 +70,9 @@ public class Settings
     public float slowDownSpeedModifier = 0.5f;
 
     public float projectilesSpeed = 1f;
-    public float turretsNormalRange = 15f;
+    public static float turretsNormalRange = 15f;
     public float explosionsRange = 10f;
-    public int turretMaxAmmo = 10;
-    public float turretFireRate = 1f;
+    public static int turretMaxAmmo = 10;
+    public static float turretFireRate = 1f;
     #endregion
 }
