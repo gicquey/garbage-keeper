@@ -72,5 +72,7 @@ public class Settings
     public float projectilesSpeed = 1f;
     public float turretsNormalRange = 15f;
     public float explosionsRange = 10f;
+    public int turretMaxAmmo = 10;
+    public float turretFireRate = 1f;
     #endregion
 }
