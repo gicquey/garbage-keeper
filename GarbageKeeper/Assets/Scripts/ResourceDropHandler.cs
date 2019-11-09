@@ -11,6 +11,7 @@ public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnDrop(PointerEventData eventData)
     {
+
         if (!draggableObject.isDropped)
         {
             if (currentObjectIn != null)

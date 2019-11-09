@@ -5,6 +5,7 @@ using UnityEngine;
 public class SlotManager : MonoBehaviour
 {
 
+
     private static SlotManager _instance = null;
     public static SlotManager Instance
     {

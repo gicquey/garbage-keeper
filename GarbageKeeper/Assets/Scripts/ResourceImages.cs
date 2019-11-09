@@ -8,6 +8,7 @@ using UnityEngine;
 [System.Serializable]
 public class ResourceImages
 {
+
     public Settings.AmmoType ammoType;
     public Sprite sprite;
 }

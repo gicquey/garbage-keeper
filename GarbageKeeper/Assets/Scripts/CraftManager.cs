@@ -78,7 +78,6 @@ public class CraftManager : MonoBehaviour
 
     private void Update()
     {
-
         if(slotOne == null || slotTwo == null)
         {
             result.sprite = resultBasicSprite;

@@ -36,6 +36,7 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
             currentSlot = -1;
             BackToInitialPosition();
         }
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
