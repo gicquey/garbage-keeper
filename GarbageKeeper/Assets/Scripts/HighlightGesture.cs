@@ -23,7 +23,6 @@ public class HighlightGesture : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("yolo");
         border.effectColor = new Color(border.effectColor.r, border.effectColor.g, border.effectColor.b, 1);
     }
 

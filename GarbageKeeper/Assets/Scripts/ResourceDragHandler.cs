@@ -10,10 +10,13 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
     Vector3 initialPosition;
     Transform initialParent;
     Image draggedObjectImage;
+    public Image duplicateObject;
+
     bool isOver = false;
     public Canvas currentCanvas;
     public bool isDroppable { get; set; }
     public bool isDropped { get; set; }
+    public int currentSlot;
     
     // Start is called before the first frame update
     void Start()
@@ -29,32 +32,38 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
     {
         if (Input.GetMouseButtonDown(1) && isOver)
         {
+            CraftManager.Instance.removeResource(currentSlot);
+            currentSlot = -1;
             BackToInitialPosition();
         }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        draggedObjectImage.raycastTarget = false;
+        if(eventData.pointerDrag == null)
+        {
+            return;
+        }
+        duplicateObject = Instantiate(, transform.parent);
+        duplicateObject.raycastTarget = false;
+        eventData.pointerDrag = duplicateObject.gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (!isDropped)
-        {
-            transform.position = Input.mousePosition;
-        }
+        duplicateObject.transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!isDroppable)
         {
+            duplicateObject.raycastTarget = true;
             currentCanvas.sortingOrder = 1;
             transform.localPosition = initialPosition;
         }
 
-        draggedObjectImage.raycastTarget = true;
+        Destroy(duplicateObject.gameObject);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
