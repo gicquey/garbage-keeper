@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ResourceDroppableHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IDropHandler
+public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,IDropHandler
 {
     private ResourceDragHandler draggableObject;
     private ResourceDragHandler currentObjectIn;
+    public int slotNumber;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -18,12 +19,13 @@ public class ResourceDroppableHandler : MonoBehaviour, IPointerEnterHandler, IPo
             }
             if (draggableObject != null)
             {
-                draggableObject.isDropped = true;
                 draggableObject.isDroppable = false;
                 draggableObject.transform.SetParent(transform);
                 draggableObject.transform.position = transform.position;
                 draggableObject.currentCanvas.sortingOrder = 1;
+                draggableObject.currentSlot = slotNumber;
                 currentObjectIn = draggableObject;
+                CraftManager.Instance.addResource(slotNumber, draggableObject.gameObject);
             }
         }
     }

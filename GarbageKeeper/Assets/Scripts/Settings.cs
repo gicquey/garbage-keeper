@@ -38,7 +38,7 @@ public class Settings
         clothes,
         battery
     };
-    [Flags]
+
     public enum Elements
     {
         organic,
