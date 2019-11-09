@@ -5,39 +5,34 @@ using UnityEngine;
 
 public class Tourelle : MonoBehaviour
 {
-    public Ennemi[] ennemis;
-    public Transform[] ennemiPos;
     private List<Settings.AmmoType> clip = new List<Settings.AmmoType>();
     private float timer = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     void LookAtEnnemi(Transform closestEnnemi)
     {
-        transform.LookAt(closestEnnemi);
+        transform.LookAt(new Vector3(closestEnnemi.position.x, transform.position.y, closestEnnemi.position.z) );
     }
 
-    float GetClosestEnnemiId()
+    int GetClosestEnnemiId()
     {
         float dist = -1f;
-        float ret = -1f;
-        for (int i = 0; i < ennemis.Length; ++i)
+        int ret = -1;
+        for (int i = 0; i < EnnemyGenerator.Instance.AliveEnnemies.Count; ++i)
         {
-            float distance = Vector3.Distance(ennemis[i].transform.position, transform.position);
+            float distance = Vector3.Distance(EnnemyGenerator.Instance.AliveEnnemies[i].transform.position, transform.position);
             if (-1 == dist ||  distance < dist)
             {
                 dist = distance;
+                ret = i;
             }
         }
-        if (dist < Settings.turretsNormalRange){
-            ret = dist;
-        }
-        else
-            ret = -1f;
+        if (dist > Settings.turretsNormalRange)
+            ret = -1;
         return ret;
     }
 
@@ -65,13 +60,15 @@ public class Tourelle : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        float closest = GetClosestEnnemiId();
-        if (timer > Settings.turretFireRate && closest >= 0)
+        if (EnnemyGenerator.Instance.AliveEnnemies != null)
         {
-            LookAtEnnemi(ennemis[(int)closest].transform);
-            Shoot(ennemis[(int)closest]);
-            timer -= Settings.turretFireRate;
+            int closest = GetClosestEnnemiId();
+            if (timer > Settings.turretFireRate && closest >= 0)
+            {
+                LookAtEnnemi(EnnemyGenerator.Instance.AliveEnnemies[closest].transform);
+                Shoot(EnnemyGenerator.Instance.AliveEnnemies[closest]);
+                timer -= Settings.turretFireRate;
+            }
         }
-        
     }
 }
