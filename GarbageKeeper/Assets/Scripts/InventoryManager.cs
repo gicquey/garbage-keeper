@@ -100,6 +100,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         UpdateTextValue();
+        FeedbackManager.Instance.OrderPushFeedback(resourceType, quantity);
     }
 
     public void UpdateAmmoQuantity(Settings.AmmoType ammoType, int quantity)
