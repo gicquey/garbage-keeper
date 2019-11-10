@@ -66,7 +66,7 @@ public class Tourelle : MonoBehaviour
             clip.RemoveAt(0);
         }
         Projectile projectile = GenerateProjectile(bullet);
-        projectile.transform.position = transform.position;
+        projectile.transform.position = transform.position + Settings.bulletOffset;
         projectile.AimAtEnemy(e);
         projectile.ammoType = bullet;
     }
