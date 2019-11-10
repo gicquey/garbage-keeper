@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Settings
 {
@@ -29,6 +30,8 @@ public class Settings
 
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
+    public static float ennemyMaxLife = 50f;
+    public static float ennemyMoveSpeed = 0.05f;
     public enum AmmoType
     {
         regular,
@@ -78,5 +81,6 @@ public class Settings
     public float explosionsRange = 10f;
     public static int turretMaxAmmo = 10;
     public static float turretFireRate = 1f;
+    public static Vector3 bulletOffset = new Vector3(0, 1, 0);
     #endregion
 }
