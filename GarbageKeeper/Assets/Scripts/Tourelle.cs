@@ -92,7 +92,7 @@ public class Tourelle : MonoBehaviour
             {
                 LookAtEnnemi(EnnemyGenerator.Instance.AliveEnnemies[closest].transform);
                 Shoot(EnnemyGenerator.Instance.AliveEnnemies[closest]);
-                timer -= Settings.Instance.turretFireRate;
+                timer = 0;
             }
         }
     }
