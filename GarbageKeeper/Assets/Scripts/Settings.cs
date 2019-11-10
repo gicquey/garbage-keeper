@@ -77,7 +77,7 @@ public class Settings
     public float explosionSideEffectDamage = 1f;
     public float slowDownSpeedModifier = 0.5f;
     public float projectilesSpeed = 0.1f;
-    public float turretsNormalRange = 3f;
+    public float turretsNormalRange = 50f;
     public float explosionsRange = 10f;
     public int turretMaxAmmo = 10;
     public float turretFireRate = 1f;

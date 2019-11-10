@@ -2932,7 +2932,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.4625777e+30, y: 1.9204603e+31, z: 1.9836599e+29,
+    w: 1.7752586e+28}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -5191,6 +5192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showExplosionRangeAroundExplosives: 0
+  showRangeAroundTurrets: 0
+  canCheatToCraftAmmo: 1
   currentMoney: 0
 --- !u!1 &1764718660
 GameObject:

@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Tourelle : MonoBehaviour
 {
-    private List<Settings.AmmoType> clip = new List<Settings.AmmoType>();
+    private Stack<Settings.AmmoType> clip = new Stack<Settings.AmmoType>();
     private float timer = 0f;
+    public Transform projectilSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,8 @@ public class Tourelle : MonoBehaviour
         }
         //Si l'ennemi est au dela de la portée ou que la prochaine munition n'est pas une pile
         //on ne voit pas l'ennemi
-        if (dist > Settings.Instance.turretsNormalRange || (clip.Count > 0 && clip[0] != Settings.AmmoType.battery))
-            ret = -1;
+        //if (dist > Settings.Instance.turretsNormalRange || (clip.Count > 0 && clip[0] != Settings.AmmoType.battery))
+        //    ret = -1;
         return ret;
     }
 
@@ -43,19 +44,19 @@ public class Tourelle : MonoBehaviour
         switch (ammotype)
         {
             case(Settings.AmmoType.regular):
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/NormalProjectile"))).GetComponent<Projectile>());
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/NormalProjectile")).GetComponent<Projectile>(), projectilSpawn.position,transform.rotation).GetComponent<Projectile>();
             case(Settings.AmmoType.battery):
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/BatteryProjectile"))).GetComponent<Projectile>());
-            case(Settings.AmmoType.clothes):
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/ClothesProjectile"))).GetComponent<Projectile>());
-            case(Settings.AmmoType.explosive):
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/ExplosiveProjectile"))).GetComponent<Projectile>());
-            case(Settings.AmmoType.poison):
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/PoisonProjectile"))).GetComponent<Projectile>());
-            case(Settings.AmmoType.puddle):
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/PuddleProjectile"))).GetComponent<Projectile>());
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/BatteryProjectile")).GetComponent<Projectile>(), projectilSpawn.position, transform.rotation).GetComponent<Projectile>();
+            case (Settings.AmmoType.clothes):
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/ClothesProjectile")).GetComponent<Projectile>(), projectilSpawn.position, transform.rotation).GetComponent<Projectile>();
+            case (Settings.AmmoType.explosive):
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/ExplosiveProjectile")).GetComponent<Projectile>(), projectilSpawn.position, transform.rotation).GetComponent<Projectile>();
+            case (Settings.AmmoType.poison):
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/PoisonProjectile")).GetComponent<Projectile>(), projectilSpawn.position, transform.rotation).GetComponent<Projectile>();
+            case (Settings.AmmoType.puddle):
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/PuddleProjectile")).GetComponent<Projectile>(), projectilSpawn.position, transform.rotation).GetComponent<Projectile>();
             default:
-                return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/NormalProjectile"))).GetComponent<Projectile>());
+                return Instantiate(((GameObject)Resources.Load("Prefabs/Projectiles/NormalProjectile")).GetComponent<Projectile>(), projectilSpawn.position, transform.rotation).GetComponent<Projectile>();
         }
     }
 
@@ -64,11 +65,10 @@ public class Tourelle : MonoBehaviour
         Settings.AmmoType bullet = Settings.AmmoType.regular;
         if (clip.Count > 0)
         {
-            bullet = clip[0];
-            clip.RemoveAt(0);
+            bullet = clip.Pop();
         }
         Projectile projectile = GenerateProjectile(bullet);
-        projectile.transform.position = transform.position + Settings.Instance.bulletOffset;
+        
         projectile.AimAtEnemy(e);
         projectile.ammoType = bullet;
     }
@@ -76,7 +76,7 @@ public class Tourelle : MonoBehaviour
     {
         for (int i = 0; i < quantity && clip.Count < Settings.Instance.turretMaxAmmo; ++i)
         {
-            clip.Add(type);
+            clip.Push(type);
         }
     }
 
