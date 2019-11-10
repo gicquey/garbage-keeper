@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
     Vector3 initialPosition;
@@ -13,7 +13,6 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
     public Image imagePrefab;
     public Image duplicateObject;
 
-    bool isOver = false;
     public Canvas currentCanvas;
     public bool isDroppable { get; set; }
     public bool isDropped { get; set; }
@@ -58,15 +57,11 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
             Destroy(duplicateObject.gameObject);
         }
 
-    }
+        if (isDropped)
+        {
+            isDroppable = false;
+            isDropped = false;
+        }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        isOver = true;
     }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        isOver = false;
-    }   
 }

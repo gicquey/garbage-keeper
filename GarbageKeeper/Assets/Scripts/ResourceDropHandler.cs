@@ -5,9 +5,12 @@ using UnityEngine.EventSystems;
 
 public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDropHandler
 {
-    private ResourceDragHandler draggedBaseObject;
-    private ResourceItem currentObjectIn;
+    public ResourceDragHandler draggedBaseObject;
+    public ResourceItem currentObjectIn;
     public int slotNumber;
+
+
+    bool isOver = false;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -24,7 +27,7 @@ public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointer
             draggedBaseObject.duplicateObject.GetComponent<ResourceItem>().currentSlot = slotNumber;
             draggedBaseObject.duplicateObject.raycastTarget = true;
             currentObjectIn = draggedBaseObject.duplicateObject.GetComponent<ResourceItem>();
-            CraftManager.Instance.addResource(slotNumber, draggedBaseObject.duplicateObject.gameObject);
+            CraftManager.Instance.addResource(slotNumber, draggedBaseObject.duplicateObject.GetComponentInParent<ResourceDropHandler>());
         }
         else
         {
@@ -34,6 +37,8 @@ public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        isOver = true;
+
         if (!eventData.dragging)
         {
             return;
@@ -47,6 +52,7 @@ public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        isOver = false;
         if (!eventData.dragging)
         {
             return;
@@ -64,6 +70,18 @@ public class ResourceDropHandler : MonoBehaviour, IPointerEnterHandler, IPointer
     // Update is called once per frame
     void Update()
     {
+       if(Input.GetMouseButtonDown(1) && isOver)
+        {
+            RemoveResource();
+        }
+    }
 
+    public void RemoveResource()
+    {
+        draggedBaseObject.isDroppable = false;
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

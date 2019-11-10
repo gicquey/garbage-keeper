@@ -25,21 +25,11 @@ public class ResourceItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     void Start()
     {
         
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && isOver && currentSlot > 0)
-        {
-            RemoveResource();
-        }
     }
-
-    public void RemoveResource()
-    {
-        CraftManager.Instance.removeResource(currentSlot);
-        Destroy(this.gameObject);
-    }
+    
 }
