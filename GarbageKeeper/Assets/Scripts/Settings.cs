@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Settings
@@ -30,8 +29,8 @@ public class Settings
 
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
-    public static float ennemyMaxLife = 50f;
-    public static float ennemyMoveSpeed = 0.05f;
+    public float baseEnnemyMaxLife = 50f;
+    public float baseEnnemyMoveSpeed = 0.01f;
     public enum AmmoType
     {
         regular,
@@ -76,11 +75,11 @@ public class Settings
     public float explosionSideEffectDamage = 1f;
     public float slowDownSpeedModifier = 0.5f;
 
-    public float projectilesSpeed = 1f;
-    public static float turretsNormalRange = 15f;
+    public float projectilesSpeed = 0.1f;
+    public float turretsNormalRange = 3f;
     public float explosionsRange = 10f;
-    public static int turretMaxAmmo = 10;
-    public static float turretFireRate = 1f;
-    public static Vector3 bulletOffset = new Vector3(0, 1, 0);
+    public int turretMaxAmmo = 10;
+    public float turretFireRate = 1f;
+    public Vector3 bulletOffset = new Vector3(0, 1, 0);
     #endregion
 }

@@ -3,6 +3,8 @@
 public class DebugManager : MonoBehaviour
 {
     public bool showExplosionRangeAroundExplosives = false;
+    public bool showRangeAroundTurrets = false;
+    public bool canCheatToCraftAmmo = false;
 
     public int currentMoney;
 

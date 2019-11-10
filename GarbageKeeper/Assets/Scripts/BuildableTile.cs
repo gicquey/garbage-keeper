@@ -30,6 +30,12 @@ public class BuildableTile : MonoBehaviour
                 Gizmos.color = Color.red;
                 Gizmos.DrawWireCube(this.transform.position, this.GetComponent<MeshRenderer>().bounds.size);
             }
+
+            if (DebugManager.Instance.gameObject.activeSelf && _turretOnTile != null && DebugManager.Instance.showRangeAroundTurrets)
+            {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireSphere(this.transform.position, Settings.Instance.turretsNormalRange);
+            }
         }
     }
 

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5277475573781843346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.03, y: 2.7183533, z: 5.184782}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 1012532936417017412}
   - {fileID: 1025460491537573436}
@@ -129,16 +129,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772781881182600770}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: f38c436cbc3caff46bf4d5f78dae0f86,
-        type: 3}
-      propertyPath: m_Name
-      value: couvercle-poubelle
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: f38c436cbc3caff46bf4d5f78dae0f86,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 233257521c26a73489f02ccd6055ba06, type: 2}
     - target: {fileID: -4216859302048453862, guid: f38c436cbc3caff46bf4d5f78dae0f86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -194,6 +184,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f38c436cbc3caff46bf4d5f78dae0f86,
+        type: 3}
+      propertyPath: m_Name
+      value: couvercle-poubelle
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: f38c436cbc3caff46bf4d5f78dae0f86,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 233257521c26a73489f02ccd6055ba06, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c436cbc3caff46bf4d5f78dae0f86, type: 3}
 --- !u!4 &1025460491537573436 stripped
@@ -209,11 +209,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772781881182600770}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 2dbc647f9d838e14ea897ba00a673229,
-        type: 3}
-      propertyPath: m_Name
-      value: blender
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2dbc647f9d838e14ea897ba00a673229,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -269,6 +264,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 2dbc647f9d838e14ea897ba00a673229,
+        type: 3}
+      propertyPath: m_Name
+      value: blender
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dbc647f9d838e14ea897ba00a673229, type: 3}
 --- !u!4 &1012532936417017412 stripped
@@ -284,11 +284,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3772781881182600770}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 29358b1aa3b64404db0b86f158b2b5af,
-        type: 3}
-      propertyPath: m_Name
-      value: corps-poubelle
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 29358b1aa3b64404db0b86f158b2b5af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -343,6 +338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 29358b1aa3b64404db0b86f158b2b5af,
+        type: 3}
+      propertyPath: m_Name
+      value: corps-poubelle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29358b1aa3b64404db0b86f158b2b5af, type: 3}
