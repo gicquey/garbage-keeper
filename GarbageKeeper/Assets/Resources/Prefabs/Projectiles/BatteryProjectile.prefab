@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6639768425111053713}
-  - component: {fileID: 688640676260297241}
   - component: {fileID: 1414130778962348667}
   - component: {fileID: 311945316897784829}
   - component: {fileID: -3012983401913380870}
+  - component: {fileID: -4504941671059370876}
   m_Layer: 0
   m_Name: BatteryProjectile
   m_TagString: Untagged
@@ -34,14 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &688640676260297241
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690235453047318675}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1414130778962348667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +56,8 @@ MeshRenderer:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
+  m_ProbeAnchor: {fileID: -4216859302048453862, guid: d37d2488e1e59e5408b1f136736ed57c,
+    type: 3}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
@@ -107,3 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoType: 5
+--- !u!33 &-4504941671059370876
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690235453047318675}
+  m_Mesh: {fileID: 1491185527073844151, guid: d37d2488e1e59e5408b1f136736ed57c, type: 3}
