@@ -172,8 +172,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4529244880379616237}
   - component: {fileID: 5787442152298264215}
+  - component: {fileID: -8111236248755783358}
   m_Layer: 0
-  m_Name: carton-volant
+  m_Name: FlyingEnnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,6 +217,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-8111236248755783358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612566378441763326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568cc4a587c9f6844b639d89f9bfc098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ennemyType: 1
+  maxLifeMultiplier: 1
+  baseSpeedMultiplier: 2
 --- !u!1 &862865497688737886
 GameObject:
   m_ObjectHideFlags: 0
