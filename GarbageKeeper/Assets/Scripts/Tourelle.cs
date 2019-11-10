@@ -71,6 +71,7 @@ public class Tourelle : MonoBehaviour
         projectile.transform.position = transform.position + Settings.Instance.bulletOffset;
         projectile.AimAtEnemy(e);
         projectile.ammoType = bullet;
+        SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.SHOOT));
     }
     public void AddAmmo(int quantity, Settings.AmmoType type)
     {

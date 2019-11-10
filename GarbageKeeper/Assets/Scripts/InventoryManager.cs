@@ -74,6 +74,7 @@ public class InventoryManager : MonoBehaviour
             var resourceMinMax = Settings.Instance.ResourcesGivenByEnemies[ennemyType][resourceType];
             UpdateResourceQuantity(resourceType, UnityEngine.Random.Range(resourceMinMax.Min, resourceMinMax.Max));
         }
+        SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.LOOT));
     }
 
     private void UpdateTextValue()

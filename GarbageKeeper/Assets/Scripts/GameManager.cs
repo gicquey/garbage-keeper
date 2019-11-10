@@ -29,11 +29,13 @@
 
     public void BuyTurret()
     {
+        SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.BUILD_TURRET));
         CurrentMoney -= Settings.Instance.turretCost;
     }
 
     public void RecycleTurret()
     {
+        SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DESTROY_TURRET));
         CurrentMoney += Settings.Instance.moneyGainedOnRecycleTurret;
     }
 
