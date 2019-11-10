@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,7 +65,15 @@ public class InventoryManager : MonoBehaviour
             UpdateAmmoQuantity(Settings.AmmoType.poison, 10);
             GameManager.Instance.AddMoney(100);
         }
-        UpdateTextValue();
+    }
+
+    public void ObtainResourcesForEnnemy(EnnemyTypes ennemyType)
+    {
+        foreach(var resourceType in Enum.GetValues(typeof(Settings.Elements)).Cast<Settings.Elements>())
+        {
+            var resourceMinMax = Settings.Instance.ResourcesGivenByEnemies[ennemyType][resourceType];
+            UpdateResourceQuantity(resourceType, UnityEngine.Random.Range(resourceMinMax.Min, resourceMinMax.Max));
+        }
     }
 
     private void UpdateTextValue()
@@ -90,6 +98,7 @@ public class InventoryManager : MonoBehaviour
                 resource.quantity += quantity;
             }
         }
+        UpdateTextValue();
     }
 
     public void UpdateAmmoQuantity(Settings.AmmoType ammoType, int quantity)
@@ -101,6 +110,7 @@ public class InventoryManager : MonoBehaviour
                 ammo.quantity += quantity;
             }
         }
+        UpdateTextValue();
     }
 
     public int getQuantityForGivenResource(Settings.Elements resourceType)

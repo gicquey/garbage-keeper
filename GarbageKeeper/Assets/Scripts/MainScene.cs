@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,15 @@ public class MainScene : MonoBehaviour
         foreach (Transform child in tilesRoot)
             Destroy(child.gameObject);
         GenerateMap();
+    }
+
+    private IEnumerator GiveMoneyEverySecond()
+    {
+        for(;;)
+        {
+            yield return new WaitForSeconds(1);
+            GameManager.Instance.AddMoney(Settings.Instance.moneyPerSecond);
+        }
     }
 
     private void GenerateMap()

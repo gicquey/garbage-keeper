@@ -177,6 +177,7 @@ public class Ennemi : MonoBehaviour
 
     public void OnDyingDamageAnimationOver()
     {
+        InventoryManager.Instance.ObtainResourcesForEnnemy(ennemyType);
         Destroy(this.gameObject);
     }
 
