@@ -29,10 +29,8 @@ public class Settings
 
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
-
     public float baseEnnemyMaxLife = 50f;
     public float baseEnnemyMoveSpeed = 0.01f;
-
     public enum AmmoType
     {
         regular,
