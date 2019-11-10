@@ -15,8 +15,8 @@ public class Ennemi : MonoBehaviour
     public float maxLifeMultiplier = 1;
     public float baseSpeedMultiplier = 1;
 
-    private Transform _lastCheckpointReached = null;
-    private Transform _nextCheckpoint = null;
+    private Vector3? _lastCheckpointReached = null;
+    private Vector3? _nextCheckpoint = null;
     private float _currentLife;
     private float _currentSpeedModifier;
     private List<Effect> _currentEffects = new List<Effect>();
@@ -47,13 +47,13 @@ public class Ennemi : MonoBehaviour
 
         if(_nextCheckpoint != null)
         {
-            if (Vector3.Distance(this.transform.position, _nextCheckpoint.position) < 0.1F)
+            if (Vector3.Distance(this.transform.position, _nextCheckpoint.Value) < 0.1F)
             {
                 ChangeDirection();
                 return;
             }
 
-            var travelDirection = Vector3.Normalize(_nextCheckpoint.position - _lastCheckpointReached.position);
+            var travelDirection = Vector3.Normalize(_nextCheckpoint.Value - _lastCheckpointReached.Value);
             var movingSpeed = baseSpeedMultiplier * Settings.Instance.baseEnnemyMoveSpeed * _currentSpeedModifier;
             this.transform.Translate(
                 movingSpeed * travelDirection.x,
@@ -61,12 +61,12 @@ public class Ennemi : MonoBehaviour
                 movingSpeed * travelDirection.z,
                 Space.World);
 
-            var directionOfCheckpoint = Vector3.Normalize(_nextCheckpoint.position - this.transform.position);
+            var directionOfCheckpoint = Vector3.Normalize(_nextCheckpoint.Value - this.transform.position);
 
             if (Vector3.Dot(directionOfCheckpoint, travelDirection) < 0)
             {
                 //If the ennemy has passed the checkpoint, we take him back on it
-                this.transform.position = _nextCheckpoint.position;
+                this.transform.position = _nextCheckpoint.Value;
             }   
         }
 
@@ -145,24 +145,24 @@ public class Ennemi : MonoBehaviour
     private void StartWalking()
     {
         GetComponent<Animator>().SetBool("Walking", true);
-        _nextCheckpoint = GameManager.Instance.mainScene.checkpoints[0];
+        _nextCheckpoint = GameManager.Instance.mainScene.Checkpoints[0];
         ChangeDirection();
     }
 
     private void ChangeDirection()
     {
         _lastCheckpointReached = _nextCheckpoint;
-        int indexOfCheckpoint = GameManager.Instance.mainScene.checkpoints.IndexOf(_lastCheckpointReached);
-        if(indexOfCheckpoint == GameManager.Instance.mainScene.checkpoints.Count - 1)
+        int indexOfCheckpoint = GameManager.Instance.mainScene.Checkpoints.IndexOf(_lastCheckpointReached.Value);
+        if(indexOfCheckpoint == GameManager.Instance.mainScene.Checkpoints.Count - 1)
         {
             ReachPathEnd();
         }
         else
         {
-            this.transform.position = _nextCheckpoint.position;
+            this.transform.position = _nextCheckpoint.Value;
             _lastCheckpointReached = _nextCheckpoint;
-            _nextCheckpoint = GameManager.Instance.mainScene.checkpoints[indexOfCheckpoint + 1];
-            this.transform.LookAt(_nextCheckpoint);
+            _nextCheckpoint = GameManager.Instance.mainScene.Checkpoints[indexOfCheckpoint + 1];
+            this.transform.LookAt(_nextCheckpoint.Value);
         }
     }
 
