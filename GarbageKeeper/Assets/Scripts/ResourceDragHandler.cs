@@ -10,6 +10,7 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
     Vector3 initialPosition;
     Transform initialParent;
     Image draggedObjectImage;
+    public Image imagePrefab;
     public Image duplicateObject;
 
     bool isOver = false;
@@ -30,12 +31,7 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && isOver)
-        {
-            CraftManager.Instance.removeResource(currentSlot);
-            currentSlot = -1;
-            BackToInitialPosition();
-        }
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -44,9 +40,8 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
         {
             return;
         }
-        duplicateObject = Instantiate(, transform.parent);
+        duplicateObject = Instantiate(imagePrefab, transform.parent);
         duplicateObject.raycastTarget = false;
-        eventData.pointerDrag = duplicateObject.gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -60,10 +55,9 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
         {
             duplicateObject.raycastTarget = true;
             currentCanvas.sortingOrder = 1;
-            transform.localPosition = initialPosition;
+            Destroy(duplicateObject.gameObject);
         }
 
-        Destroy(duplicateObject.gameObject);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -74,15 +68,5 @@ public class ResourceDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandle
     public void OnPointerExit(PointerEventData eventData)
     {
         isOver = false;
-    }
-
-    public void BackToInitialPosition()
-    {
-        isDroppable = false;
-        isDropped = false;
-        currentCanvas.sortingOrder = 1;
-        transform.SetParent(initialParent);
-        transform.localPosition = initialPosition;
-    }
-    
+    }   
 }
