@@ -95,7 +95,9 @@ public class EnnemyGenerator : MonoBehaviour
         switch(ennemyType)
         {
             case EnnemyTypes.NORMAL:
+                if (UnityEngine.Random.Range(1,6) % 2 == 1)
                     AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/NormalEnnemy"))).GetComponent<Ennemi>());
+                else
                     AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/TrashEnnemy"))).GetComponent<Ennemi>());
                 break;
 
