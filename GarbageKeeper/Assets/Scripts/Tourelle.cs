@@ -31,7 +31,9 @@ public class Tourelle : MonoBehaviour
                 ret = i;
             }
         }
-        if (dist > Settings.turretsNormalRange)
+        //Si l'ennemi est au dela de la portée ou que la prochaine munition n'est pas une pile
+        //on ne voit pas l'ennemi
+        if (dist > Settings.turretsNormalRange || (clip.Count > 0 && clip[0] != Settings.AmmoType.battery))
             ret = -1;
         return ret;
     }
