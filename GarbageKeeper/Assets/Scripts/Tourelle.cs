@@ -33,7 +33,7 @@ public class Tourelle : MonoBehaviour
         }
         //Si l'ennemi est au dela de la portée ou que la prochaine munition n'est pas une pile
         //on ne voit pas l'ennemi
-        if (dist > Settings.turretsNormalRange || (clip.Count > 0 && clip[0] != Settings.AmmoType.battery))
+        if (dist > Settings.Instance.turretsNormalRange || (clip.Count > 0 && clip[0] != Settings.AmmoType.battery))
             ret = -1;
         return ret;
     }
@@ -68,13 +68,13 @@ public class Tourelle : MonoBehaviour
             clip.RemoveAt(0);
         }
         Projectile projectile = GenerateProjectile(bullet);
-        projectile.transform.position = transform.position + Settings.bulletOffset;
+        projectile.transform.position = transform.position + Settings.Instance.bulletOffset;
         projectile.AimAtEnemy(e);
         projectile.ammoType = bullet;
     }
     public void AddAmmo(int quantity, Settings.AmmoType type)
     {
-        for (int i = 0; i < quantity && clip.Count < Settings.turretMaxAmmo; ++i)
+        for (int i = 0; i < quantity && clip.Count < Settings.Instance.turretMaxAmmo; ++i)
         {
             clip.Add(type);
         }
@@ -87,11 +87,11 @@ public class Tourelle : MonoBehaviour
         if (EnnemyGenerator.Instance.AliveEnnemies != null)
         {
             int closest = GetClosestEnnemiId();
-            if (timer > Settings.turretFireRate && closest >= 0)
+            if (timer > Settings.Instance.turretFireRate && closest >= 0)
             {
                 LookAtEnnemi(EnnemyGenerator.Instance.AliveEnnemies[closest].transform);
                 Shoot(EnnemyGenerator.Instance.AliveEnnemies[closest]);
-                timer -= Settings.turretFireRate;
+                timer -= Settings.Instance.turretFireRate;
             }
         }
     }
