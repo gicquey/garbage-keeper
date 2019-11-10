@@ -111,11 +111,13 @@ public class Ennemi : MonoBehaviour
         switch(projectile.ammoType)
         {
             case Settings.AmmoType.poison :
+                SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.IMPACT_POISON));
                 _currentEffects.Add(new Effect(EffectTypes.DAMAGE_OVER_TIME));
                 break;
 
             case Settings.AmmoType.puddle:
                 _currentEffects.Add(new Effect(EffectTypes.SLOW_DOWN));
+                SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.IMPACT_PUDDLE));
                 break;
 
             case Settings.AmmoType.explosive:
@@ -123,6 +125,10 @@ public class Ennemi : MonoBehaviour
                 {
                     ennemyInRange.TakeDamage(Settings.Instance.explosionSideEffectDamage);
                 }
+                break;
+
+            case Settings.AmmoType.battery:
+                SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.IMPACT_BATTERY));
                 break;
         }
     }
@@ -136,6 +142,7 @@ public class Ennemi : MonoBehaviour
         if(_currentLife <= 0)
         {
             _dying = true;
+            SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DIE_DAMAGE));
             EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
             this.GetComponent<Animator>().SetTrigger("DyingDamage");
             OnDyingDamageAnimationOver(); //Remove when DyingDamage calls it
@@ -168,6 +175,7 @@ public class Ennemi : MonoBehaviour
 
     private void ReachPathEnd()
     {
+        SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DIE_END));
         EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
         _dying = true;
         this.GetComponent<Animator>().SetTrigger("DyingEnd");
@@ -177,6 +185,7 @@ public class Ennemi : MonoBehaviour
 
     public void OnDyingDamageAnimationOver()
     {
+        InventoryManager.Instance.ObtainResourcesForEnnemy(ennemyType);
         Destroy(this.gameObject);
     }
 

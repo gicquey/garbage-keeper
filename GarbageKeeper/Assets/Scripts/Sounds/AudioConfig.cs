@@ -5,9 +5,15 @@ using UnityEngine;
 
 public enum SoundTypes
 {
-    WALK,
     SHOOT,
-    HURT
+    DIE_END,
+    DIE_DAMAGE,
+    LOOT,
+    IMPACT_PUDDLE,
+    IMPACT_BATTERY,
+    IMPACT_POISON,
+    BUILD_TURRET,
+    DESTROY_TURRET,
 }
 
 public enum MusicTypes
@@ -52,8 +58,8 @@ public class AudioConfig : MonoBehaviour
 		{
             _instance = this;
 		}
-
-		DontDestroyOnLoad(this.gameObject);
+        soundsThatCutMusic = new List<AudioClip>();
+        DontDestroyOnLoad(this.gameObject);
 	}
 
     public AudioClip GetClipForSoundType (SoundTypes soundType)

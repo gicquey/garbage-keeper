@@ -24,15 +24,14 @@ public class Settings
 
     #region Game
     public int initialMoney = 100;
+    public int moneyPerSecond = 10;
     public int turretCost = 50;
     public int moneyGainedOnRecycleTurret = 25;
 
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
-
     public float baseEnnemyMaxLife = 50f;
     public float baseEnnemyMoveSpeed = 0.01f;
-
     public enum AmmoType
     {
         regular,
@@ -82,5 +81,40 @@ public class Settings
     public int turretMaxAmmo = 10;
     public float turretFireRate = 1f;
     public Vector3 bulletOffset = new Vector3(0, 1, 0);
+
+    public struct ResourceMinMax
+    {
+        public int Min;
+        public int Max;
+
+        public ResourceMinMax(int pMin, int pMax)
+        {
+            Min = pMin;
+            Max = pMax;
+        }
+    }
+    public Dictionary<EnnemyTypes, Dictionary<Elements, ResourceMinMax>> ResourcesGivenByEnemies = new Dictionary<EnnemyTypes, Dictionary<Elements, ResourceMinMax>>()
+    {
+        {
+           EnnemyTypes.NORMAL,
+           new Dictionary<Elements, ResourceMinMax>()
+           {
+               { Elements.chimical, new ResourceMinMax(1, 4) },
+               { Elements.fabric, new ResourceMinMax(1, 8) },
+               { Elements.organic, new ResourceMinMax(1, 5) },
+               { Elements.solid, new ResourceMinMax(1, 7) }
+           }
+        },
+        {
+           EnnemyTypes.FLYING,
+           new Dictionary<Elements, ResourceMinMax>()
+           {
+               { Elements.chimical, new ResourceMinMax(1, 4) },
+               { Elements.fabric, new ResourceMinMax(1, 8) },
+               { Elements.organic, new ResourceMinMax(1, 5) },
+               { Elements.solid, new ResourceMinMax(1, 7) }
+           }
+        }
+    };
     #endregion
 }
