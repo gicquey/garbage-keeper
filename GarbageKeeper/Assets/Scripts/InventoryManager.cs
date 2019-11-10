@@ -63,6 +63,7 @@ public class InventoryManager : MonoBehaviour
             UpdateAmmoQuantity(Settings.AmmoType.puddle, 10);
             UpdateAmmoQuantity(Settings.AmmoType.clothes, 10);
             UpdateAmmoQuantity(Settings.AmmoType.poison, 10);
+            GameManager.Instance.AddMoney(100);
         }
         UpdateTextValue();
     }

@@ -37,6 +37,11 @@
         CurrentMoney += Settings.Instance.moneyGainedOnRecycleTurret;
     }
 
+    public void AddMoney(int money)
+    {
+        CurrentMoney += money;
+    }
+
     public void LoseLife(float amount)
     {
         _currentLife -= amount;
