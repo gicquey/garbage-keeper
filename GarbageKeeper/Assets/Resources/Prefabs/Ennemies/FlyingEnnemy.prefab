@@ -127,5 +127,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemyType: 1
-  maxLife: 50
-  baseMovingSpeed: 0.1
+  maxLifeMultiplier: 1
+  baseSpeedMultiplier: 2

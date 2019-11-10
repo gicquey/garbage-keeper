@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class CraftManager : MonoBehaviour
 {
+    private ResourceDropHandler slotOneDrop;
+    private ResourceDropHandler slotTwoDrop;
+
     private ResourceItem slotOne;
     private ResourceItem slotTwo;
 
@@ -34,11 +37,28 @@ public class CraftManager : MonoBehaviour
     {
         get
         {
-            if(firstSlotAvailableQuantity == secondSlotAvailableQuantity)
+            if (isSameResource)
+            {
+                if (firstSlotAvailableQuantity == secondSlotAvailableQuantity)
+                {
+                    return (int) firstSlotAvailableQuantity / 2;
+                }
+
+                if (firstSlotAvailableQuantity > secondSlotAvailableQuantity)
+                {
+                    return (int)firstSlotAvailableQuantity / secondSlotAvailableQuantity;
+                }
+                else
+                {
+                    return (int)secondSlotAvailableQuantity / firstSlotAvailableQuantity;
+                }
+            }
+
+            if (firstSlotAvailableQuantity == secondSlotAvailableQuantity)
             {
                 return firstSlotAvailableQuantity;
             }
-            if(firstSlotAvailableQuantity > secondSlotAvailableQuantity)
+            if (firstSlotAvailableQuantity > secondSlotAvailableQuantity)
             {
                 return secondSlotAvailableQuantity % firstSlotAvailableQuantity;
             }
@@ -46,6 +66,14 @@ public class CraftManager : MonoBehaviour
             {
                 return firstSlotAvailableQuantity % secondSlotAvailableQuantity;
             }
+        }
+    }
+
+    private bool isSameResource
+    {
+        get
+        {
+            return slotOne.resourceType == slotTwo.resourceType && slotOne != null && slotTwo != null;
         }
     }
 
@@ -72,18 +100,20 @@ public class CraftManager : MonoBehaviour
     }
 
 
-    public void addResource(int slot, GameObject res)
+    public void addResource(int slot, ResourceDropHandler res)
     {
 
         switch (slot)
         {
             case 1:
-                slotOne = res.GetComponent<ResourceItem>();
+                slotOneDrop = res;
+                slotOne = res.currentObjectIn;
                 firstSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotOne.resourceType);
                 break;
             case 2:
-                slotTwo = res.GetComponent<ResourceItem>();
-                secondSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotOne.resourceType);
+                slotTwoDrop = res;
+                slotTwo = res.currentObjectIn;
+                secondSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotTwo.resourceType);
                 break;
 
             default:
@@ -91,15 +121,17 @@ public class CraftManager : MonoBehaviour
         }
     }
 
-    public void removeResource(int slot)
+    public void RemoveResource(int slot)
     {
         switch (slot)
         {
             case 1:
+                slotOneDrop.RemoveResource();
                 slotOne = null;
                 firstSlotAvailableQuantity = 0;
                 break;
             case 2:
+                slotTwoDrop.RemoveResource();
                 slotTwo = null;
                 secondSlotAvailableQuantity = 0;
                 break;
@@ -120,14 +152,14 @@ public class CraftManager : MonoBehaviour
         {
             CheckRecipeAndUpdateResult();
             firstSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotOne.resourceType);
-            secondSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotOne.resourceType);
+            secondSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotTwo.resourceType);
             CraftButtonManagement();
         }
     }
 
     private void CraftButtonManagement()
     {
-        if (firstSlotAvailableQuantity > 0 && secondSlotAvailableQuantity > 0)
+        if (firstSlotAvailableQuantity > 0 && secondSlotAvailableQuantity > 0 && !isSameResource)
         {
             craftOne.enabled = true;
             craftMax.enabled = true;
@@ -139,7 +171,7 @@ public class CraftManager : MonoBehaviour
             craftFifty.enabled = false;
             craftMax.enabled = false;
         }
-        if (firstSlotAvailableQuantity > 9 && secondSlotAvailableQuantity > 9)
+        if (firstSlotAvailableQuantity > 9 && secondSlotAvailableQuantity > 9 && !isSameResource)
         {
             craftTen.enabled = true;
         }
@@ -149,13 +181,48 @@ public class CraftManager : MonoBehaviour
             craftFifty.enabled = false;
         }
 
-        if (firstSlotAvailableQuantity > 49 && secondSlotAvailableQuantity > 49)
+        if (firstSlotAvailableQuantity > 49 && secondSlotAvailableQuantity > 49 && !isSameResource)
         {
             craftFifty.enabled = true;
         }
         else
         {
             craftFifty.enabled = false;
+        }
+
+        if (isSameResource)
+        {
+            if (_maxAvailableQuantity > 0)
+            {
+                craftOne.enabled = true;
+                craftMax.enabled = true;
+            }
+            else
+            {
+                craftOne.enabled = false;
+                craftTen.enabled = false;
+                craftFifty.enabled = false;
+                craftMax.enabled = false;
+            }
+
+            if (_maxAvailableQuantity > 9)
+            {
+                craftTen.enabled = true;
+            }
+            else
+            {
+                craftTen.enabled = false;
+                craftFifty.enabled = false;
+            }
+
+            if (_maxAvailableQuantity > 49)
+            {
+                craftFifty.enabled = true;
+            }
+            else
+            {
+                craftFifty.enabled = false;
+            }
         }
     }
 
@@ -182,8 +249,8 @@ public class CraftManager : MonoBehaviour
     {
         firstSlotAvailableQuantity -= 1;
         secondSlotAvailableQuantity -= 1;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, 1, false);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, 1, false);
+        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -1);
+        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -1);
         InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount);
         if (!CanCraft())
         {
@@ -195,8 +262,8 @@ public class CraftManager : MonoBehaviour
     {
         firstSlotAvailableQuantity -= 10;
         secondSlotAvailableQuantity -= 10;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, 10, false);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, 10, false);
+        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -10);
+        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -10);
         InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * 10);
         if (!CanCraft())
         {
@@ -208,8 +275,8 @@ public class CraftManager : MonoBehaviour
     {
         firstSlotAvailableQuantity -= 50;
         secondSlotAvailableQuantity -= 50;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, 50, false);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, 50, false);
+        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -50);
+        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -50);
         InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * 50);
         if (!CanCraft())
         {
@@ -219,13 +286,22 @@ public class CraftManager : MonoBehaviour
 
     public void CraftMaxHandler()
     {
-        int value = _maxAvailableQuantity;
-        firstSlotAvailableQuantity -= value;
-        secondSlotAvailableQuantity -= value;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, value, false);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, value, false);
 
-        InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount *  value);
+        int value = _maxAvailableQuantity;
+
+        if (isSameResource)
+        {
+            firstSlotAvailableQuantity = 0;
+            secondSlotAvailableQuantity = 0;
+        }
+        else
+        {
+            firstSlotAvailableQuantity -= value;
+            secondSlotAvailableQuantity -= value;
+        }
+        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -value);
+        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -value);
+        InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * value);
         if (!CanCraft())
         {
             ResetSlots();
@@ -235,16 +311,12 @@ public class CraftManager : MonoBehaviour
 
     private bool CanCraft()
     {
-        return firstSlotAvailableQuantity > 0 && secondSlotAvailableQuantity > 0;
+        return _maxAvailableQuantity > 0;
     }
 
     private void ResetSlots()
     {
-        slotOne.RemoveResource();
-        slotTwo.RemoveResource();
-        firstSlotAvailableQuantity = 0;
-        secondSlotAvailableQuantity = 0;
-        slotOne = null;
-        slotTwo = null;
+        RemoveResource(1);
+        RemoveResource(2);
     }
 }

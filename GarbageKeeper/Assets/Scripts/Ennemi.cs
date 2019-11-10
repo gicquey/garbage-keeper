@@ -12,8 +12,8 @@ public enum EnnemyTypes
 public class Ennemi : MonoBehaviour
 {
     public EnnemyTypes ennemyType;
-    public float maxLife = Settings.Instance.ennemyMaxLife;
-    public float baseMovingSpeed = Settings.Instance.ennemyMoveSpeed;
+    public float maxLifeMultiplier = 1;
+    public float baseSpeedMultiplier = 1;
 
     private Transform _lastCheckpointReached = null;
     private Transform _nextCheckpoint = null;
@@ -26,7 +26,7 @@ public class Ennemi : MonoBehaviour
 
     private void Awake()
     {
-        _currentLife = maxLife;
+        _currentLife = maxLifeMultiplier * Settings.Instance.baseEnnemyMaxLife;
         _timesSinceEffectActivations[EffectTypes.DAMAGE_OVER_TIME] = 0f;
         _timesSinceEffectActivations[EffectTypes.SLOW_DOWN] = 0f;
         StartWalking();
@@ -54,7 +54,7 @@ public class Ennemi : MonoBehaviour
             }
 
             var travelDirection = Vector3.Normalize(_nextCheckpoint.position - _lastCheckpointReached.position);
-            var movingSpeed = baseMovingSpeed * _currentSpeedModifier;
+            var movingSpeed = baseSpeedMultiplier * Settings.Instance.baseEnnemyMoveSpeed * _currentSpeedModifier;
             this.transform.Translate(
                 movingSpeed * travelDirection.x,
                 movingSpeed * travelDirection.y,
@@ -138,6 +138,7 @@ public class Ennemi : MonoBehaviour
             _dying = true;
             EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
             this.GetComponent<Animator>().SetTrigger("DyingDamage");
+            OnDyingDamageAnimationOver(); //Remove when DyingDamage calls it
         }
     }
 
@@ -171,6 +172,7 @@ public class Ennemi : MonoBehaviour
         _dying = true;
         this.GetComponent<Animator>().SetTrigger("DyingEnd");
         _nextCheckpoint = null;
+        OnDyingEndAnimationOver(); //TODO Remove when DyingEnd calls it
     }
 
     public void OnDyingDamageAnimationOver()

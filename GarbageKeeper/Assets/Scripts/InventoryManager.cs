@@ -51,7 +51,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G))
+        if (DebugManager.Instance.gameObject.activeSelf && DebugManager.Instance.canCheatToCraftAmmo && Input.GetKeyDown(KeyCode.G))
         {
             UpdateResourceQuantity(Settings.Elements.chimical, 10);
             UpdateResourceQuantity(Settings.Elements.organic, 10);
@@ -80,46 +80,24 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void UpdateResourceQuantity(Settings.Elements resourceType, int quantity, bool isAddition = true)
+    public void UpdateResourceQuantity(Settings.Elements resourceType, int quantity)
     {
         foreach (var resource in ResourceInventory)
         {
-            if(resource.resource == resourceType)
+            if (resource.resource == resourceType)
             {
-                if (isAddition)
-                {
-                    resource.quantity += quantity;
-                }
-                else
-                {
-                    resource.quantity -= quantity;
-                    if(resource.quantity < 0)
-                    {
-                        resource.quantity = 0;
-                    }
-                }
+                resource.quantity += quantity;
             }
         }
     }
 
-    public void UpdateAmmoQuantity(Settings.AmmoType ammoType, int quantity, bool isAddition = true)
+    public void UpdateAmmoQuantity(Settings.AmmoType ammoType, int quantity)
     {
         foreach (var ammo in AmmoInventory)
         {
             if (ammo.ammoType == ammoType)
             {
-                if (isAddition)
-                {
-                    ammo.quantity += quantity;
-                }
-                else
-                {
-                    ammo.quantity -= quantity;
-                    if(ammo.quantity < 0)
-                    {
-                        ammo.quantity = 0;
-                    }
-                }
+                ammo.quantity += quantity;
             }
         }
     }
