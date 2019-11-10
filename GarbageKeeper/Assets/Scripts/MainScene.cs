@@ -7,6 +7,8 @@ public class MainScene : MonoBehaviour
     public Transform checkpointsRoot;
     public Transform topTilesTopCorner;
 
+    public TextAsset mapGenerator;
+
     public List<Transform> checkpoints;
 
     public void Awake()

@@ -1866,6 +1866,7 @@ MonoBehaviour:
   tilesRoot: {fileID: 537053808}
   checkpointsRoot: {fileID: 1522232660}
   topTilesTopCorner: {fileID: 1381233248}
+  mapGenerator: {fileID: 4900000, guid: 7e79a4e3ca1853e44bd2da9afa55d593, type: 3}
   checkpoints:
   - {fileID: 2046244255}
   - {fileID: 1931420220}
