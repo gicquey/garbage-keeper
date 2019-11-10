@@ -95,7 +95,8 @@ public class EnnemyGenerator : MonoBehaviour
         switch(ennemyType)
         {
             case EnnemyTypes.NORMAL:
-                AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/NormalEnnemy"))).GetComponent<Ennemi>());
+                    AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/NormalEnnemy"))).GetComponent<Ennemi>());
+                    AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/TrashEnnemy"))).GetComponent<Ennemi>());
                 break;
 
             case EnnemyTypes.FLYING:
