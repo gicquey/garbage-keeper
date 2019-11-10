@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class MainScene : MonoBehaviour
 {
+    public Transform tilesRoot;
+    public Transform checkpointsRoot;
+    public Transform topTilesTopCorner;
+
     public List<Transform> checkpoints;
 
     public void Awake()
