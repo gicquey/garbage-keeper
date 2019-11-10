@@ -12,8 +12,8 @@ public enum EnnemyTypes
 public class Ennemi : MonoBehaviour
 {
     public EnnemyTypes ennemyType;
-    public float maxLife = 50f;
-    public float baseMovingSpeed = 0.05f;
+    public float maxLife = Settings.ennemyMaxLife;
+    public float baseMovingSpeed = Settings.ennemyMoveSpeed;
 
     private Transform _lastCheckpointReached = null;
     private Transform _nextCheckpoint = null;

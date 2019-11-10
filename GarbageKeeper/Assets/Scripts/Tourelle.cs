@@ -42,25 +42,18 @@ public class Tourelle : MonoBehaviour
         {
             case(Settings.AmmoType.regular):
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/NormalProjectile"))).GetComponent<Projectile>());
-                break;
             case(Settings.AmmoType.battery):
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/BatteryProjectile"))).GetComponent<Projectile>());
-            break;
             case(Settings.AmmoType.clothes):
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/ClothesProjectile"))).GetComponent<Projectile>());
-            break;
             case(Settings.AmmoType.explosive):
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/ExplosiveProjectile"))).GetComponent<Projectile>());
-            break;
             case(Settings.AmmoType.poison):
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/PoisonProjectile"))).GetComponent<Projectile>());
-            break;
             case(Settings.AmmoType.puddle):
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/PuddleProjectile"))).GetComponent<Projectile>());
-            break;
             default:
                 return(((GameObject)Instantiate(Resources.Load("Prefabs/Projectiles/NormalProjectile"))).GetComponent<Projectile>());
-            break;
         }
     }
 
@@ -73,6 +66,7 @@ public class Tourelle : MonoBehaviour
             clip.RemoveAt(0);
         }
         Projectile projectile = GenerateProjectile(bullet);
+        projectile.transform.position = transform.position;
         projectile.AimAtEnemy(e);
         projectile.ammoType = bullet;
     }
