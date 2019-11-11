@@ -48,7 +48,7 @@ public class Projectile : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (DebugManager.Instance.gameObject.activeSelf && DebugManager.Instance.showExplosionRangeAroundExplosives && ammoType == AmmoType.explosive)
+        if (DebugManager.Instance.enabled && DebugManager.Instance.showExplosionRangeAroundExplosives && ammoType == AmmoType.explosive)
         {
             Gizmos.DrawSphere(this.transform.position, Settings.Instance.explosionsRange);
         }

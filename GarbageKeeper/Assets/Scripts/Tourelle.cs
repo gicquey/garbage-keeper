@@ -22,7 +22,7 @@ public class Tourelle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        timer = Settings.Instance.turretFireRate;
         ammoTypeFeedBack.sprite = Resources.Load<Sprite>("Sprite/regular");
     }
 
@@ -62,14 +62,15 @@ public class Tourelle : MonoBehaviour
     public void Shoot(Ennemi e)
     {
         poubelleAnimator.SetTrigger("Shoot");
-
         StartCoroutine(ShootCoroutine(e, poubelleAnimator));
 
     }
 
     IEnumerator ShootCoroutine(Ennemi e, Animator anim)
     {
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.2f);
+        yield return new WaitForSeconds(0.1f);
+
+        //yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.2f);
 
         Settings.AmmoType bullet = Settings.AmmoType.regular;
         if (clip.Count > 0)
