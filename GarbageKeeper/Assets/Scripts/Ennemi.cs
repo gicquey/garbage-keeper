@@ -182,7 +182,7 @@ public class Ennemi : MonoBehaviour
     private void ReachPathEnd()
     {
         SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DIE_END));
-        EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
+        WaveManager.Instance.RemoveEnnemy(this);
         _dying = true;
         this.GetComponent<Animator>().SetTrigger("DyingEnd");
         _nextCheckpoint = null;
