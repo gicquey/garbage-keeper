@@ -286,6 +286,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: f38c436cbc3caff46bf4d5f78dae0f86,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94d3e440bc51c1e4cb0610aa0e10697e, type: 2}
     - target: {fileID: -6057140222963153312, guid: f38c436cbc3caff46bf4d5f78dae0f86,
         type: 3}
       propertyPath: m_Controller
@@ -397,6 +402,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: corps-poubelle
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 29358b1aa3b64404db0b86f158b2b5af,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7bb692d216900384691ed47a3fd8ce98, type: 2}
     - target: {fileID: -4216859302048453862, guid: 29358b1aa3b64404db0b86f158b2b5af,
         type: 3}
       propertyPath: m_LocalPosition.x

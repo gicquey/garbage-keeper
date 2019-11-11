@@ -315,12 +315,12 @@ MonoBehaviour:
   AliveEnnemies: []
   waves:
   - waveContent:
-    - {fileID: 4242520899289803698, guid: 9c0ef3f2b49444d43a367edecb197df1, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
     timeBetweenSpawn: 1
   - waveContent:
-    - {fileID: 8533366190097517480, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
     timeBetweenSpawn: 10
-  spawn: {fileID: 0}
+  spawn: {fileID: 9023696700783399802, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
   timeBetweenWaves: 10
 --- !u!4 &194493705
 Transform:
@@ -1449,7 +1449,7 @@ Transform:
   m_Children:
   - {fileID: 546358901}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818978819
 GameObject:
@@ -1579,7 +1579,7 @@ PrefabInstance:
     - target: {fileID: 7276985400149884080, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7276985400149884080, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
