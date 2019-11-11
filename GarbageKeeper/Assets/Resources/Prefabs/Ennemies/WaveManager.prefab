@@ -64,5 +64,46 @@ MonoBehaviour:
     - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
     - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
     timeBetweenSpawn: 3
+  - waveContent:
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    timeBetweenSpawn: 3
+  - waveContent:
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    timeBetweenSpawn: 3
+  - waveContent:
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    timeBetweenSpawn: 3
+  - waveContent:
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 7988961386500215266, guid: 1e55142689a908c4696265380f061146, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    timeBetweenSpawn: 3
+  - waveContent:
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    timeBetweenSpawn: 3
+  - waveContent:
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
+    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    - {fileID: 9201718227047990146, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
+    timeBetweenSpawn: 3
   spawn: {fileID: 9023696700783399802, guid: 37aeb936f530dd242835de77de79fb77, type: 3}
   timeBetweenWaves: 10
