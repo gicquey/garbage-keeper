@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnnemyTypes
 {
@@ -14,6 +15,9 @@ public class Ennemi : MonoBehaviour
     public EnnemyTypes ennemyType;
     public float maxLifeMultiplier = 1;
     public float baseSpeedMultiplier = 1;
+
+    public GameObject slowedImageFeedBack;
+    public GameObject poisonedImageFeedBack;
 
     private Vector3? _lastCheckpointReached = null;
     private Vector3? _nextCheckpoint = null;
@@ -33,6 +37,8 @@ public class Ennemi : MonoBehaviour
 
     private void Start()
     {
+        slowedImageFeedBack.SetActive(false);
+        poisonedImageFeedBack.SetActive(false);
         StartWalking();
     }
 
@@ -43,6 +49,26 @@ public class Ennemi : MonoBehaviour
         {
             effect.ReduceTimeToLive(Time.deltaTime);
         }
+
+        if(_currentEffects.Exists(effect => effect.EffectType == EffectTypes.DAMAGE_OVER_TIME))
+        {
+            poisonedImageFeedBack.SetActive(true);
+        }
+        else
+        {
+            poisonedImageFeedBack.SetActive(false);
+        }
+
+
+        if (_currentEffects.Exists(effect => effect.EffectType == EffectTypes.SLOW_DOWN))
+        {
+            slowedImageFeedBack.SetActive(true);
+        }
+        else
+        {
+            slowedImageFeedBack.SetActive(false);
+        }
+
         _currentEffects.RemoveAll(effect => effect.TimeToLive <= 0);
         ApplyEffects();
 
