@@ -41,7 +41,12 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-
+        if(waveIndex >= waves.Length)
+        {
+            var lastWave = waves[waves.Length - 1];
+            lastWave.waveContent.AddRange(lastWave.waveContent);
+            waveIndex = waves.Length - 1;
+        }
         Wave wave = waves[waveIndex];
         
 
