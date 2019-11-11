@@ -30,18 +30,19 @@
     public void BuyTurret()
     {
         SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.BUILD_TURRET));
-        CurrentMoney -= Settings.Instance.turretCost;
+        UpdateMoney(-Settings.Instance.turretCost);
     }
 
     public void RecycleTurret()
     {
         SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DESTROY_TURRET));
-        CurrentMoney += Settings.Instance.moneyGainedOnRecycleTurret;
+        UpdateMoney(Settings.Instance.moneyGainedOnRecycleTurret);
     }
 
-    public void AddMoney(int money)
+    public void UpdateMoney(int money)
     {
         CurrentMoney += money;
+
     }
 
     public void LoseLife(float amount)

@@ -4,15 +4,32 @@ using UnityEngine.EventSystems;
 public class BuildableTile : MonoBehaviour
 {
     private Tourelle _turretOnTile;
+    private Material material;
+    private Color initialColor;
     private bool _pointerOnTile;
+
+    private void Start()
+    {
+        material = GetComponent<MeshRenderer>().material;
+        initialColor = material.color;
+    }
 
     public void OnMouseEnter()
     {
+        if (_turretOnTile)
+        {
+            material.color = Color.red;
+        }
+        else
+        {
+            material.color = Color.green;
+        }
         _pointerOnTile = true;
     }
 
     public void OnMouseExit()
     {
+        material.color = initialColor;
         _pointerOnTile = false;
     }
 

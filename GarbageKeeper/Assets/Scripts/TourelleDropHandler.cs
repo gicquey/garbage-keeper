@@ -12,9 +12,9 @@ public class TourelleDropHandler : MonoBehaviour
 
     private void OnMouseOver()
     {
-        material.color = Color.red;
         if (AmmoDragManager.Instance.isDragging)
         {
+            material.color = Color.green;
             AmmoDragManager.Instance.canDrop = true;
             AmmoDragManager.Instance.dropZone = GetComponent<Tourelle>();
         }

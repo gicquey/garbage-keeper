@@ -21,6 +21,7 @@ public class InventoryManager : MonoBehaviour
     public Text Explosive;
     public Text Battery;
     public Text Puddle;
+    public Text Monney;
     public Text Clothes;
 
     private static InventoryManager _instance = null;
@@ -63,8 +64,9 @@ public class InventoryManager : MonoBehaviour
             UpdateAmmoQuantity(Settings.AmmoType.puddle, 10);
             UpdateAmmoQuantity(Settings.AmmoType.clothes, 10);
             UpdateAmmoQuantity(Settings.AmmoType.poison, 10);
-            GameManager.Instance.AddMoney(100);
+            GameManager.Instance.UpdateMoney(100);
         }
+        UpdateTextValue();
     }
 
     public void ObtainResourcesForEnnemy(EnnemyTypes ennemyType)
@@ -88,6 +90,8 @@ public class InventoryManager : MonoBehaviour
         {
             ammo.quantityText.text = ammo.quantity.ToString();
         }
+
+        Monney.text = GameManager.Instance.CurrentMoney.ToString();
     }
 
     public void UpdateResourceQuantity(Settings.Elements resourceType, int quantity)
@@ -122,6 +126,18 @@ public class InventoryManager : MonoBehaviour
             if (resource.resource == resourceType)
             {
                 return resource.quantity;
+            }
+        }
+        return -1;
+    }
+
+    public int getQuantityForGivenAmmo(Settings.AmmoType ammoType)
+    {
+        foreach (var ammo in AmmoInventory)
+        {
+            if (ammo.ammoType == ammoType)
+            {
+                return ammo.quantity;
             }
         }
         return -1;

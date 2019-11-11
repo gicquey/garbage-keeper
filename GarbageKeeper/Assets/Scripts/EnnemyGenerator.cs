@@ -22,8 +22,7 @@ public class EnnemyGenerator : MonoBehaviour
 
     public List<EnnemyProbabilitiesOnTimePeriod> ennemyProbabilitiesOnTimePeriods;
     public float defaultAverageEnnemiesIncrementPerSecond;
-
-    public List<Ennemi> AliveEnnemies { get; private set; } 
+    
 
     private float _totalTimeElapsed;
 
@@ -35,7 +34,6 @@ public class EnnemyGenerator : MonoBehaviour
 
     private void Awake()
     {
-        AliveEnnemies = new List<Ennemi>();
         _totalTimeElapsed = 0;
         if (_instance != null && _instance != this)
         {
@@ -96,19 +94,19 @@ public class EnnemyGenerator : MonoBehaviour
         {
             case EnnemyTypes.NORMAL:
                 if (UnityEngine.Random.Range(1,6) % 2 == 1)
-                    AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/NormalEnnemy"))).GetComponent<Ennemi>());
+                    WaveManager.Instance.AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/NormalEnnemy"))).GetComponent<Ennemi>());
                 else
-                    AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/TrashEnnemy"))).GetComponent<Ennemi>());
+                    WaveManager.Instance.AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/TrashEnnemy"))).GetComponent<Ennemi>());
                 break;
 
             case EnnemyTypes.FLYING:
-                AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/FlyingEnnemy"))).GetComponent<Ennemi>());
+                WaveManager.Instance.AliveEnnemies.Add(((GameObject)Instantiate(Resources.Load("Prefabs/Ennemies/FlyingEnnemy"))).GetComponent<Ennemi>());
                 break;
         }
     }
 
     public void NotifyDeadEnnemy(Ennemi ennemy)
     {
-        AliveEnnemies.Remove(ennemy);
+        WaveManager.Instance.AliveEnnemies.Remove(ennemy);
     }
 }

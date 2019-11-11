@@ -23,10 +23,10 @@ public class MainScene : MonoBehaviour
 
     private IEnumerator GiveMoneyEverySecond()
     {
-        for(;;)
+        for (; ; )
         {
             yield return new WaitForSeconds(1);
-            GameManager.Instance.AddMoney(Settings.Instance.moneyPerSecond);
+            GameManager.Instance.UpdateMoney(Settings.Instance.moneyPerSecond);
         }
     }
 
@@ -34,26 +34,33 @@ public class MainScene : MonoBehaviour
     {
         var generatorLines = mapGenerator.text.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.None);
         var sortedCheckpoints = new SortedDictionary<char, Vector3>();
-        for(int i = 0; i < generatorLines.Length; ++i)
+        for (int i = 0; i < generatorLines.Length; ++i)
         {
             var line = generatorLines[i];
-            for(int j = 0; j < line.Length; ++j)
+            for (int j = 0; j < line.Length; ++j)
             {
                 Vector2 currentXZ = new Vector3(topTilesTopCorner.transform.localPosition.x + j, topTilesTopCorner.transform.localPosition.z - i);
                 if (line[j].Equals('@'))
                 {
-                    var newBuildableTile = (GameObject)Instantiate(Resources.Load("Prefabs/BuildableTile"));
+                    var newBuildableTile = (GameObject)Instantiate(Resources.Load("Prefabs/Tiles/BuildableTile"));
                     newBuildableTile.transform.SetParent(tilesRoot.transform);
                     newBuildableTile.transform.localPosition = new Vector3(currentXZ.x, topTilesTopCorner.transform.localPosition.y, currentXZ.y);
                 }
-                else if(line[j].Equals('-'))
+                else if (line[j].Equals('~'))
                 {
-                    //Add generate empty tile ?
+                    var newGrassTile = (GameObject)Instantiate(Resources.Load("Prefabs/Tiles/GrassTile"));
+                    newGrassTile.transform.SetParent(tilesRoot.transform);
+                    newGrassTile.transform.localPosition = new Vector3(currentXZ.x, topTilesTopCorner.transform.localPosition.y, currentXZ.y);
+
                 }
-                else
+                else if(!line[j].Equals('-'))
                 {
                     sortedCheckpoints[line[j]] = new Vector3(currentXZ.x, topTilesTopCorner.transform.position.y, currentXZ.y);
                 }
+
+                var newGroundTile = (GameObject)Instantiate(Resources.Load("Prefabs/Tiles/UnderGroundTile"));
+                newGroundTile.transform.SetParent(tilesRoot.transform);
+                newGroundTile.transform.localPosition = new Vector3(currentXZ.x, topTilesTopCorner.transform.localPosition.y - 1, currentXZ.y);
             }
         }
         Checkpoints.AddRange(sortedCheckpoints.Values);

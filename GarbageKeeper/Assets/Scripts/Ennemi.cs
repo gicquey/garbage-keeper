@@ -17,7 +17,7 @@ public class Ennemi : MonoBehaviour
 
     private Vector3? _lastCheckpointReached = null;
     private Vector3? _nextCheckpoint = null;
-    private float _currentLife;
+    public float _currentLife;
     private float _currentSpeedModifier;
     private List<Effect> _currentEffects = new List<Effect>();
     private Dictionary<EffectTypes, float> _timesSinceEffectActivations = new Dictionary<EffectTypes, float>();
@@ -29,6 +29,10 @@ public class Ennemi : MonoBehaviour
         _currentLife = maxLifeMultiplier * Settings.Instance.baseEnnemyMaxLife;
         _timesSinceEffectActivations[EffectTypes.DAMAGE_OVER_TIME] = 0f;
         _timesSinceEffectActivations[EffectTypes.SLOW_DOWN] = 0f;
+    }
+
+    private void Start()
+    {
         StartWalking();
     }
 
@@ -121,7 +125,7 @@ public class Ennemi : MonoBehaviour
                 break;
 
             case Settings.AmmoType.explosive:
-                foreach(var ennemyInRange in EnnemyGenerator.Instance.AliveEnnemies.Where(ennemy => Vector3.Distance(this.transform.position, ennemy.transform.position) <= Settings.Instance.explosionsRange))
+                foreach(var ennemyInRange in WaveManager.Instance.AliveEnnemies.Where(ennemy => Vector3.Distance(this.transform.position, ennemy.transform.position) <= Settings.Instance.explosionsRange))
                 {
                     ennemyInRange.TakeDamage(Settings.Instance.explosionSideEffectDamage);
                 }

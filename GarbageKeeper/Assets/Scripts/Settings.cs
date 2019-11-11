@@ -79,7 +79,7 @@ public class Settings
     public float turretsNormalRange = 50f;
     public float explosionsRange = 10f;
     public int turretMaxAmmo = 10;
-    public float turretFireRate = 5f;
+    public float turretFireRate = 1.75f;
     public Vector3 bulletOffset = new Vector3(0, 1, 0);
 
     public struct ResourceMinMax

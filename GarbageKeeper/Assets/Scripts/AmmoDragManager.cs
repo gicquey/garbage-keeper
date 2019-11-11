@@ -51,7 +51,7 @@ public class AmmoDragManager : MonoBehaviour
 
     internal void dropAmmo(Settings.AmmoType ammoType, int droppedQuantity)
     {
-        Debug.Log("Je drop");
+        isDragging = false;
         dropZone.AddAmmo(droppedQuantity, ammoType);
         InventoryManager.Instance.UpdateAmmoQuantity(ammoType, -droppedQuantity);
     }

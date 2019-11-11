@@ -23,9 +23,9 @@ public class Tourelle : MonoBehaviour
     {
         float dist = -1f;
         int ret = -1;
-        for (int i = 0; i < EnnemyGenerator.Instance.AliveEnnemies.Count; ++i)
+        for (int i = 0; i < WaveManager.Instance.AliveEnnemies.Count; ++i)
         {
-            float distance = Vector3.Distance(EnnemyGenerator.Instance.AliveEnnemies[i].transform.position, transform.position);
+            float distance = Vector3.Distance(WaveManager.Instance.AliveEnnemies[i].transform.position, transform.position);
             if (-1 == dist ||  distance < dist)
             {
                 dist = distance;
@@ -85,13 +85,14 @@ public class Tourelle : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (EnnemyGenerator.Instance.AliveEnnemies != null)
+        if (WaveManager.Instance.AliveEnnemies != null)
         {
             int closest = GetClosestEnnemiId();
+            LookAtEnnemi(WaveManager.Instance.AliveEnnemies[closest].transform);
             if (timer > Settings.Instance.turretFireRate && closest >= 0)
             {
-                LookAtEnnemi(EnnemyGenerator.Instance.AliveEnnemies[closest].transform);
-                Shoot(EnnemyGenerator.Instance.AliveEnnemies[closest]);
+                LookAtEnnemi(WaveManager.Instance.AliveEnnemies[closest].transform);
+                Shoot(WaveManager.Instance.AliveEnnemies[closest]);
                 timer = 0;
             }
         }

@@ -27,8 +27,13 @@ public class DraggableAmmo : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (AmmoDragManager.Instance.canDrop)
+        var quantityAvailable = InventoryManager.Instance.getQuantityForGivenAmmo(ammoType);
+        if (AmmoDragManager.Instance.canDrop && quantityAvailable > 0)
         {
+            if(quantityAvailable < droppedQuantity)
+            {
+                droppedQuantity = quantityAvailable;
+            }
             AmmoDragManager.Instance.dropAmmo(ammoType, droppedQuantity);
         }
 
