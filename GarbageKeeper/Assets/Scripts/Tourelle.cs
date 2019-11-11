@@ -20,22 +20,6 @@ public class Tourelle : MonoBehaviour
         transform.LookAt(new Vector3(closestEnnemi.position.x, transform.position.y, closestEnnemi.position.z) );
     }
 
-    int GetClosestEnnemiId()
-    {
-        float dist = -1f;
-        int ret = -1;
-        for (int i = 0; i < WaveManager.Instance.AliveEnnemies.Count; ++i)
-        {
-            float distance = Vector3.Distance(WaveManager.Instance.AliveEnnemies[i].transform.position, transform.position);
-            if (-1 == dist ||  distance < dist)
-            {
-                dist = distance;
-                ret = i;
-            }
-        }
-        return ret;
-    }
-
     Projectile GenerateProjectile(Settings.AmmoType ammotype)
     {
         switch (ammotype)
@@ -96,14 +80,57 @@ public class Tourelle : MonoBehaviour
         timer += Time.deltaTime;
         if (WaveManager.Instance.AliveEnnemies != null)
         {
-            int closest = GetClosestEnnemiId();
-            LookAtEnnemi(WaveManager.Instance.AliveEnnemies[closest].transform);
-            if (timer > Settings.Instance.turretFireRate && closest >= 0)
+            var currentTarget = GetTarget();
+            if (timer > Settings.Instance.turretFireRate && currentTarget != null)
             {
-                LookAtEnnemi(WaveManager.Instance.AliveEnnemies[closest].transform);
-                Shoot(WaveManager.Instance.AliveEnnemies[closest]);
+                LookAtEnnemi(currentTarget.transform);
+                Shoot(currentTarget);
                 timer = 0;
             }
         }
+    }
+
+    private Ennemi GetTarget()
+    {
+        Ennemi currentTarget = null;
+        float bestPathProgress = -1f;
+        foreach(var ennemy in GetTargetableEnnemies())
+        {
+            if(currentTarget == null || (ennemy.GetPathProgress() > bestPathProgress))
+            {
+                currentTarget = ennemy;
+                bestPathProgress = ennemy.GetPathProgress();
+            }
+        }
+        return currentTarget;
+    }
+
+    private List<Ennemi> GetTargetableEnnemies()
+    {
+        var targetableEnnemies = new List<Ennemi>(WaveManager.Instance.AliveEnnemies);
+
+        if(GetCurrentAmmo() != Settings.AmmoType.clothes)
+        {
+            targetableEnnemies.RemoveAll(ennemy => ennemy.ennemyType == EnnemyTypes.FLYING);
+        }
+
+        targetableEnnemies.RemoveAll(ennemy => Vector3.Distance(ennemy.transform.position, this.transform.position) > GetRange());
+        return targetableEnnemies;
+    }
+
+    private Settings.AmmoType GetCurrentAmmo()
+    {
+        var currentAmmo = Settings.AmmoType.regular;
+        if (clip.Count > 0)
+            currentAmmo = clip.Peek();
+        return currentAmmo;
+    }
+
+    public float GetRange()
+    {
+        float distance = Settings.Instance.turretsNormalRange;
+        if (GetCurrentAmmo() == Settings.AmmoType.battery)
+            distance = Settings.Instance.turretBatteryAmmoRange;
+        return distance;
     }
 }
