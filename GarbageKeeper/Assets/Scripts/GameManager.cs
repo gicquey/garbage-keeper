@@ -18,6 +18,11 @@
 
     private GameManager()
     {
+        Initialize();
+    }
+
+    public void Initialize()
+    {
         CurrentMoney = Settings.Instance.initialMoney;
         CurrentLife = Settings.Instance.lifeMax;
     }
@@ -49,9 +54,9 @@
     {
         CurrentLife -= amount;
         mainScene.RefreshLifeIndicator();
-        if(CurrentLife < 0)
+        if(CurrentLife <= 0)
         {
-            //Game over
+            mainScene.gameOver.Show();
         }
     }
 }

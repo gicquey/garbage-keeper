@@ -33,7 +33,6 @@ public class WaveManager : MonoBehaviour
         {
             _instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
     
     void Start()
