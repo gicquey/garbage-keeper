@@ -12,11 +12,7 @@ GameObject:
   - component: {fileID: 7556323538772667305}
   - component: {fileID: 9165744062780186458}
   - component: {fileID: 7697429849553892326}
-<<<<<<< HEAD
   - component: {fileID: 544904179}
-=======
-  - component: {fileID: -2182141891858245270}
->>>>>>> 928ed4d45d9d260e05aacdf7622141fe89797c80
   m_Layer: 0
   m_Name: NormalProjectile
   m_TagString: Projectile
@@ -97,40 +93,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoType: 0
-<<<<<<< HEAD
 --- !u!65 &544904179
 BoxCollider:
-=======
---- !u!114 &-2182141891858245270
-MonoBehaviour:
->>>>>>> 928ed4d45d9d260e05aacdf7622141fe89797c80
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484169890584029243}
-<<<<<<< HEAD
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.41454372, y: 0.39999995, z: 0.39786354}
   m_Center: {x: -0.0072718854, y: 0, z: 0.20106818}
-=======
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: "event:/Projectiles/Lanc\xE9"
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
->>>>>>> 928ed4d45d9d260e05aacdf7622141fe89797c80

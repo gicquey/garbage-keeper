@@ -316,7 +316,7 @@ MonoBehaviour:
   waves:
   - waveContent:
     - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
-    - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
+    - {fileID: 2408953971099360775, guid: beb9b98e03457d54c8455e907cada9eb, type: 3}
     - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
     - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
     - {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb, type: 3}
@@ -1713,22 +1713,22 @@ PrefabInstance:
     - target: {fileID: 7276985399859626202, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7276985399859626202, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7276985399859626202, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7276985399859626202, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7276985401314090084, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
@@ -2668,6 +2668,11 @@ PrefabInstance:
     - target: {fileID: 7276985401001136366, guid: b2e0c93201a75b045836689336e067ad,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276985400149884083, guid: b2e0c93201a75b045836689336e067ad,
+        type: 3}
+      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276985400701854223, guid: b2e0c93201a75b045836689336e067ad,
