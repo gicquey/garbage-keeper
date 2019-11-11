@@ -34,22 +34,27 @@ public class WaveManager : MonoBehaviour
             _instance = this;
         }
     }
-    
+
     void Start()
     {
     }
 
     IEnumerator SpawnWave()
     {
-
+        if (waveIndex >= waves.Length)
+        {
+            var lastWave = waves[waves.Length - 1];
+            lastWave.waveContent.AddRange(lastWave.waveContent);
+            waveIndex = waves.Length - 1;
+        }
         Wave wave = waves[waveIndex];
-        
+
 
         for (int i = 0; i < wave.count; i++)
         {
 
             SpawnEnemy(wave.waveContent[i]);
-            yield return new WaitForSeconds( wave.timeBetweenSpawn);
+            yield return new WaitForSeconds(wave.timeBetweenSpawn);
         }
 
         waveIndex++;
@@ -59,7 +64,7 @@ public class WaveManager : MonoBehaviour
     {
         AliveEnnemies.Add(Instantiate(e));
     }
-    
+
     void Update()
     {
         if (AliveEnnemies.Count > 0)
