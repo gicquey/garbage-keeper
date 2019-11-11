@@ -313,14 +313,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6903101341292676979}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -8.169935, y: -55, z: 2}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children:
   - {fileID: 7203583688688663468}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
 --- !u!95 &132558793375924371
 Animator:
   serializedVersion: 3
@@ -490,86 +490,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.02
       objectReference: {fileID: 0}
-    - target: {fileID: 2771107134347644858, guid: a0f51ea9092753f42b1f162867e0fbdb,
+    - target: {fileID: 4510406038340823024, guid: a0f51ea9092753f42b1f162867e0fbdb,
         type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2771107134347644858, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2771107134347644858, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2771107134347644858, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 975217744822377713, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 975217744822377713, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 975217744822377713, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 975217744822377713, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2357282636549808278, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2357282636549808278, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2357282636549808278, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2357282636549808278, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 2408953971099360775}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f51ea9092753f42b1f162867e0fbdb, type: 3}
 --- !u!224 &475660626535362155 stripped

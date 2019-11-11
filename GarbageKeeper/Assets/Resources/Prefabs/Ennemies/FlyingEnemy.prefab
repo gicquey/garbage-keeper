@@ -954,6 +954,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHealthManager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3584365250076901493, guid: a0f51ea9092753f42b1f162867e0fbdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1074,26 +1094,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.333
       objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8854044190276173467, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2357282636549808278, guid: a0f51ea9092753f42b1f162867e0fbdb,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1114,6 +1114,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4510406038340823024, guid: a0f51ea9092753f42b1f162867e0fbdb,
+        type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 9201718227047990146}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f51ea9092753f42b1f162867e0fbdb, type: 3}
 --- !u!224 &7043842553710181506 stripped

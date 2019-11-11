@@ -24,7 +24,7 @@ public class Settings
 
     #region Game
     public int initialMoney = 100;
-    public int moneyPerSecond = 10;
+    public int moneyPerSecond = 5;
     public int turretCost = 50;
     public int moneyGainedOnRecycleTurret = 25;
 
@@ -72,7 +72,7 @@ public class Settings
         {AmmoType.battery, 3f }
     };
 
-    public float damageOverTimeDamageByActivation = 10f;
+    public float damageOverTimeDamageByActivation = 1f;
     public float explosionSideEffectDamage = 1f;
     public float slowDownSpeedModifier = 0.5f;
     public float projectilesSpeed = 0.1f;
