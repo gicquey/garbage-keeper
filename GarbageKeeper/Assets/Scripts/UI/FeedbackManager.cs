@@ -33,6 +33,10 @@ public class FeedbackManager : MonoBehaviour
         }
         _feedbacks = new List<Feedback>();
         _feedbacksQueue = new List<FeedbackInfo>();
+        foreach(Transform child in this.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     private void Update()
