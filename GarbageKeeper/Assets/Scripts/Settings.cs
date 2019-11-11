@@ -31,7 +31,7 @@ public class Settings
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
     public float baseEnnemyMaxLife = 50f;
-    public float baseEnnemyMoveSpeed = 0.01f;
+    public float baseEnnemyMoveSpeed = 0.005f;
     public enum AmmoType
     {
         regular,
@@ -72,15 +72,15 @@ public class Settings
         {AmmoType.battery, 1f }
     };
 
-    public float damageOverTimeDamageByActivation = 1f;
+    public float damageOverTimeDamageByActivation = 10f;
     public float explosionSideEffectDamage = 1f;
     public float slowDownSpeedModifier = 0.5f;
     public float projectilesSpeed = 0.1f;
-    public float turretsNormalRange = 50f;
+    public float turretsNormalRange = 5f;
+    public float turretBatteryAmmoRange = 10f;
     public float explosionsRange = 10f;
     public int turretMaxAmmo = 10;
     public float turretFireRate = 1.75f;
-    public Vector3 bulletOffset = new Vector3(0, 1, 0);
 
     public struct ResourceMinMax
     {

@@ -139,6 +139,16 @@ public class Ennemi : MonoBehaviour
         }
     }
 
+    public float GetPathProgress()
+    {
+        if(_lastCheckpointReached == null || _nextCheckpoint == null)
+        {
+            return -1f;
+        }
+        return ((float)GameManager.Instance.mainScene.Checkpoints.IndexOf(_lastCheckpointReached.Value)) + (Vector3.Distance(_lastCheckpointReached.Value, this.transform.position)
+                                                                                                            / Vector3.Distance(_lastCheckpointReached.Value, _nextCheckpoint.Value));
+    }
+
     public void TakeDamage(float damage)
     {
         if (_dying)
