@@ -51,7 +51,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DebugManager.Instance.gameObject.activeSelf && DebugManager.Instance.canCheatToCraftAmmo && Input.GetKeyDown(KeyCode.G))
+        if (DebugManager.Instance.enabled && DebugManager.Instance.canCheatToCraftAmmo && Input.GetKeyDown(KeyCode.G))
         {
             UpdateResourceQuantity(Settings.Elements.chimical, 10);
             UpdateResourceQuantity(Settings.Elements.organic, 10);
