@@ -14,7 +14,7 @@ public class GameOverPanel : MonoBehaviour
         GameManager.Instance.mainScene.hud.gameObject.SetActive(false);
 
         TimeSpan t = TimeSpan.FromSeconds(GameManager.Instance.mainScene.hud.TimeElapsed);
-        time.text = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D2}",
+        time.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s:{3:D2}ms",
                 t.Hours,
                 t.Minutes,
                 t.Seconds,

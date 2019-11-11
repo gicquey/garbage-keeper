@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum EnnemyTypes
 {
@@ -15,15 +16,15 @@ public class Ennemi : MonoBehaviour
     public float maxLifeMultiplier = 1;
     public float baseSpeedMultiplier = 1;
 
+    public GameObject slowedImageFeedBack;
+    public GameObject poisonedImageFeedBack;
+
     private Vector3? _lastCheckpointReached = null;
     private Vector3? _nextCheckpoint = null;
     public float _currentLife;
     private float _currentSpeedModifier;
     private List<Effect> _currentEffects = new List<Effect>();
     private Dictionary<EffectTypes, float> _timesSinceEffectActivations = new Dictionary<EffectTypes, float>();
-
-    public GameObject slowedEffectFeedback;
-    public GameObject poisonnedEffectFeedback;
 
     private bool _dying = false;
 
@@ -36,8 +37,8 @@ public class Ennemi : MonoBehaviour
 
     private void Start()
     {
-        slowedEffectFeedback.SetActive(false);
-        poisonnedEffectFeedback.SetActive(false);
+        slowedImageFeedBack.SetActive(false);
+        poisonedImageFeedBack.SetActive(false);
         StartWalking();
     }
 
@@ -51,20 +52,21 @@ public class Ennemi : MonoBehaviour
 
         if(_currentEffects.Exists(effect => effect.EffectType == EffectTypes.DAMAGE_OVER_TIME))
         {
-            poisonnedEffectFeedback.SetActive(true);
+            poisonedImageFeedBack.SetActive(true);
         }
         else
         {
-            poisonnedEffectFeedback.SetActive(false);
+            poisonedImageFeedBack.SetActive(false);
         }
+
 
         if (_currentEffects.Exists(effect => effect.EffectType == EffectTypes.SLOW_DOWN))
         {
-            slowedEffectFeedback.SetActive(true);
+            slowedImageFeedBack.SetActive(true);
         }
         else
         {
-            slowedEffectFeedback.SetActive(false);
+            slowedImageFeedBack.SetActive(false);
         }
 
         _currentEffects.RemoveAll(effect => effect.TimeToLive <= 0);
