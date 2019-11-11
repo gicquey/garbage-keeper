@@ -24,6 +24,7 @@ public class RecetteManager : MonoBehaviour
         {
             _instance = this;
         }
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public List<Recette> recettes;
