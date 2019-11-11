@@ -147,7 +147,7 @@ public class Ennemi : MonoBehaviour
         {
             _dying = true;
             SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DIE_DAMAGE));
-            EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
+            WaveManager.Instance.RemoveEnnemy(this);
             this.GetComponent<Animator>().SetTrigger("DyingDamage");
             OnDyingDamageAnimationOver(); //Remove when DyingDamage calls it
         }

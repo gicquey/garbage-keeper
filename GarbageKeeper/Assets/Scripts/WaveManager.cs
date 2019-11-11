@@ -44,8 +44,7 @@ public class WaveManager : MonoBehaviour
     {
 
         Wave wave = waves[waveIndex];
-
-        AliveEnnemies.AddRange(wave.waveContent);
+        
 
         for (int i = 0; i < wave.count; i++)
         {
@@ -79,5 +78,11 @@ public class WaveManager : MonoBehaviour
         countdown -= Time.deltaTime;
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+    }
+
+
+    public void RemoveEnnemy(Ennemi ennemy)
+    {
+        WaveManager.Instance.AliveEnnemies.Remove(ennemy);
     }
 }

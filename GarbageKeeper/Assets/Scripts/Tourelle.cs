@@ -8,6 +8,7 @@ public class Tourelle : MonoBehaviour
     private Stack<Settings.AmmoType> clip = new Stack<Settings.AmmoType>();
     private float timer = 0f;
     public Transform projectilSpawn;
+    public Animator poubelleAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +33,6 @@ public class Tourelle : MonoBehaviour
                 ret = i;
             }
         }
-        //Si l'ennemi est au dela de la portée ou que la prochaine munition n'est pas une pile
-        //on ne voit pas l'ennemi
-        //if (dist > Settings.Instance.turretsNormalRange || (clip.Count > 0 && clip[0] != Settings.AmmoType.battery))
-        //    ret = -1;
         return ret;
     }
 
@@ -62,17 +59,29 @@ public class Tourelle : MonoBehaviour
 
     public void Shoot(Ennemi e)
     {
+        poubelleAnimator.SetTrigger("Shoot");
+
+        StartCoroutine(ShootCoroutine(e, poubelleAnimator));
+       
+    }
+
+    IEnumerator ShootCoroutine(Ennemi e, Animator anim)
+    {
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length + anim.GetCurrentAnimatorStateInfo(0).normalizedTime - 0.2f);
+
         Settings.AmmoType bullet = Settings.AmmoType.regular;
         if (clip.Count > 0)
         {
             bullet = clip.Pop();
         }
         Projectile projectile = GenerateProjectile(bullet);
-        
+
         projectile.AimAtEnemy(e);
         projectile.ammoType = bullet;
         SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.SHOOT));
     }
+
+
     public void AddAmmo(int quantity, Settings.AmmoType type)
     {
         for (int i = 0; i < quantity && clip.Count < Settings.Instance.turretMaxAmmo; ++i)
