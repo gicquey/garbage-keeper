@@ -1,0 +1,489 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8572798655074663390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Craft/Organique
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Craft/Organique
+  guid: 98e4b94143578f47b58f17ceac71e425
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5648157890618623714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Craft/Solide
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Craft/Solide
+  guid: aefdc15a4faafd49a53bab505006ea2a
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4801429926003786839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Tourelle/D\xE9molition"
+  m_EditorClassIdentifier: 
+  Path: "event:/Tourelle/D\xE9molition"
+  guid: eaa204afa7e4e84db864ce3535e6da84
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3118
+--- !u!114 &-4321182879140152441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Projectiles/Destruction/A\xE9rien"
+  m_EditorClassIdentifier: 
+  Path: "event:/Projectiles/Destruction/A\xE9rien"
+  guid: 1eabd4c16e51784e83bdbf37fa1d8f05
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3666369343587234340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Projectiles/Lanc\xE9"
+  m_EditorClassIdentifier: 
+  Path: "event:/Projectiles/Lanc\xE9"
+  guid: 9fdf8c4002030f43bba6a6566366005b
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3060780444282233126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemis/Volant
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemis/Volant
+  guid: caa6954e33c4af4e98b6b5d6b2c38db1
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2997145349686448428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637090703451619955
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-2136119131865092858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectiles/Destruction/Distance
+  m_EditorClassIdentifier: 
+  Path: event:/Projectiles/Destruction/Distance
+  guid: a7cd852d34a6034f87aff2617ad9fd73
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &-1996920457805627054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Musique/Th\xE8me"
+  m_EditorClassIdentifier: 
+  Path: "event:/Musique/Th\xE8me"
+  guid: b2ecb42434a92a49a3f86ba338af2774
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 138947
+--- !u!114 &-1178497360375672825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectiles/Destruction/Explosif
+  m_EditorClassIdentifier: 
+  Path: event:/Projectiles/Destruction/Explosif
+  guid: 480d3407491add4db80c13dedc872420
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1161153530773542738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Craft/Chimique
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Craft/Chimique
+  guid: 1bb85dcd2190634aa8c7fa4f50d44e52
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 5792120498846587336}
+  - {fileID: 4326888987601862126}
+  EditorEvents:
+  - {fileID: 536675147878655588}
+  - {fileID: 1005965666745969733}
+  - {fileID: -1161153530773542738}
+  - {fileID: -4321182879140152441}
+  - {fileID: 8294413133925310148}
+  - {fileID: 404689997097941327}
+  - {fileID: -1178497360375672825}
+  - {fileID: -8572798655074663390}
+  - {fileID: -2136119131865092858}
+  - {fileID: -5648157890618623714}
+  - {fileID: -1996920457805627054}
+  - {fileID: -3060780444282233126}
+  - {fileID: 4651805389979436839}
+  - {fileID: -4801429926003786839}
+  - {fileID: 8236576914464197028}
+  - {fileID: 3333657197154971878}
+  - {fileID: -3666369343587234340}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 4326888987601862126}
+  StringsBanks:
+  - {fileID: 5792120498846587336}
+  stringsBankWriteTime: 637090704961392988
+  cacheVersion: 3
+--- !u!114 &404689997097941327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tourelle/Construction
+  m_EditorClassIdentifier: 
+  Path: event:/Tourelle/Construction
+  guid: 2b9fb62eef51bc4391d2c98994c3e51f
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3143
+--- !u!114 &536675147878655588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectiles/Destruction/Poison
+  m_EditorClassIdentifier: 
+  Path: event:/Projectiles/Destruction/Poison
+  guid: 0f36de563deb4a44a83e696a996c3c1c
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &1005965666745969733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/HUD/Craft/Jil\xE9jon\xE9"
+  m_EditorClassIdentifier: 
+  Path: "event:/HUD/Craft/Jil\xE9jon\xE9"
+  guid: 1af5293528fba447bccbd2290e0980cf
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3333657197154971878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/HUD/Loot
+  m_EditorClassIdentifier: 
+  Path: event:/HUD/Loot
+  guid: f98869cf939f4042a26107d8902a7195
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &4326888987601862126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637090704961052909
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4651805389979436839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemis/Terrestre
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemis/Terrestre
+  guid: dadcfe372688a84d8aa0a4832267dc84
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &5792120498846587336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSound/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637090704961392988
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1502
+  Exists: 1
+--- !u!114 &8236576914464197028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectiles/Destruction/Boue
+  m_EditorClassIdentifier: 
+  Path: event:/Projectiles/Destruction/Boue
+  guid: f34f548326fa1e4c9d155eb800e1b858
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &8294413133925310148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projectiles/Destruction/Basique
+  m_EditorClassIdentifier: 
+  Path: event:/Projectiles/Destruction/Basique
+  guid: 1fd6e151caa7614ca3f2deef47f92b57
+  Banks:
+  - {fileID: 4326888987601862126}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
