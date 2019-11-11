@@ -37,6 +37,10 @@ public class CraftManager : MonoBehaviour
     {
         get
         {
+            if(slotOne == null ||slotTwo == null)
+            {
+                return 0;
+            }
             if (isSameResource)
             {
                 if (firstSlotAvailableQuantity == secondSlotAvailableQuantity)
@@ -88,6 +92,8 @@ public class CraftManager : MonoBehaviour
         {
             _instance = this;
         }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()
@@ -152,6 +158,13 @@ public class CraftManager : MonoBehaviour
             firstSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotOne.resourceType);
             secondSlotAvailableQuantity = InventoryManager.Instance.getQuantityForGivenResource(slotTwo.resourceType);
             CraftButtonManagement();
+        }
+        else
+        {
+            craftOne.enabled = false;
+            craftTen.enabled = false;
+            craftFifty.enabled = false;
+            craftMax.enabled = false;
         }
     }
 
@@ -245,11 +258,15 @@ public class CraftManager : MonoBehaviour
 
     public void CraftOneHandler()
     {
-        firstSlotAvailableQuantity -= 1;
-        secondSlotAvailableQuantity -= 1;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -1);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -1);
-        InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount);
+        if (CanCraft())
+        {
+            firstSlotAvailableQuantity -= 1;
+            secondSlotAvailableQuantity -= 1;
+            InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -1);
+            InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -1);
+            InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount);
+        }
+       
         if (!CanCraft())
         {
             ResetSlots();
@@ -258,11 +275,15 @@ public class CraftManager : MonoBehaviour
 
     public void CraftTenHandler()
     {
-        firstSlotAvailableQuantity -= 10;
-        secondSlotAvailableQuantity -= 10;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -10);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -10);
-        InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * 10);
+        if (CanCraft())
+        {
+            firstSlotAvailableQuantity -= 10;
+            secondSlotAvailableQuantity -= 10;
+            InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -10);
+            InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -10);
+            InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * 10);
+        }
+       
         if (!CanCraft())
         {
             ResetSlots();
@@ -271,11 +292,15 @@ public class CraftManager : MonoBehaviour
 
     public void CraftFiftyHandler()
     {
-        firstSlotAvailableQuantity -= 50;
-        secondSlotAvailableQuantity -= 50;
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -50);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -50);
-        InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * 50);
+        if (CanCraft())
+        {
+            firstSlotAvailableQuantity -= 50;
+            secondSlotAvailableQuantity -= 50;
+            InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -50);
+            InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -50);
+            InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * 50);
+        }
+        
         if (!CanCraft())
         {
             ResetSlots();
@@ -284,25 +309,27 @@ public class CraftManager : MonoBehaviour
 
     public void CraftMaxHandler()
     {
+        if (CanCraft())
+        {
+            int value = _maxAvailableQuantity;
 
-        int value = _maxAvailableQuantity;
-
-        if (isSameResource)
-        {
-            firstSlotAvailableQuantity = 0;
-            secondSlotAvailableQuantity = 0;
-        }
-        else
-        {
-            firstSlotAvailableQuantity -= value;
-            secondSlotAvailableQuantity -= value;
-        }
-        InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -value);
-        InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -value);
-        InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * value);
-        if (!CanCraft())
-        {
-            ResetSlots();
+            if (isSameResource)
+            {
+                firstSlotAvailableQuantity = 0;
+                secondSlotAvailableQuantity = 0;
+            }
+            else
+            {
+                firstSlotAvailableQuantity -= value;
+                secondSlotAvailableQuantity -= value;
+            }
+            InventoryManager.Instance.UpdateResourceQuantity(slotOne.resourceType, -value);
+            InventoryManager.Instance.UpdateResourceQuantity(slotTwo.resourceType, -value);
+            InventoryManager.Instance.UpdateAmmoQuantity(recette.result, recette.resultAmount * value);
+            if (!CanCraft())
+            {
+                ResetSlots();
+            }
         }
     }
 

@@ -8,9 +8,6 @@ public class MainScene : MonoBehaviour
     public Transform tilesRoot;
     public Transform topTilesTopCorner;
 
-    public HUD hud;
-    public GameOverPanel gameOver;
-
     public TextAsset mapGenerator;
 
     public List<Vector3> Checkpoints { get; private set; }
