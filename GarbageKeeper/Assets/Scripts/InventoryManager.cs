@@ -41,7 +41,6 @@ public class InventoryManager : MonoBehaviour
         {
             _instance = this;
         }
-        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
