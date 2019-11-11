@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ennemyType: 0
   maxLifeMultiplier: 1
-  baseSpeedMultiplier: 4
+  baseSpeedMultiplier: 1
   _currentLife: 0
   slowedEffectFeedback: {fileID: 6961025525838511895}
   poisonnedEffectFeedback: {fileID: 8963512429572580998}
@@ -681,11 +681,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7929914737289091385}
     m_Modifications:
-    - target: {fileID: 3584365250076901494, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyHealthManager
-      objectReference: {fileID: 0}
     - target: {fileID: 3584365250076901493, guid: a0f51ea9092753f42b1f162867e0fbdb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,15 +786,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3584365250076901493, guid: a0f51ea9092753f42b1f162867e0fbdb,
+    - target: {fileID: 3584365250076901494, guid: a0f51ea9092753f42b1f162867e0fbdb,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.015
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584365250076901493, guid: a0f51ea9092753f42b1f162867e0fbdb,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.015
+      propertyPath: m_Name
+      value: EnemyHealthManager
       objectReference: {fileID: 0}
     - target: {fileID: 4510406038340823024, guid: a0f51ea9092753f42b1f162867e0fbdb,
         type: 3}

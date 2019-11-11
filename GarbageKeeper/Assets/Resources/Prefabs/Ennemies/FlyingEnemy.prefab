@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemyType: 1
-  maxLifeMultiplier: 1
-  baseSpeedMultiplier: 1
+  maxLifeMultiplier: 0.5
+  baseSpeedMultiplier: 2
   _currentLife: 0
   slowedEffectFeedback: {fileID: 1583495208239074615}
   poisonnedEffectFeedback: {fileID: 650761647536772262}
