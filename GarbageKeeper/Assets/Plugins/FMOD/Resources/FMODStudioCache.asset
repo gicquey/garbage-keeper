@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Projectiles/Destruction/Explosif
   guid: ff6528e42a43c145861107e1952a6992
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
   Path: "event:/Joueur/Craft/A\xE9rien"
   guid: 4575d5cd749e7f4ead67adac096871d1
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -61,7 +61,7 @@ MonoBehaviour:
   Path: event:/Projectiles/Destruction/Poison
   guid: de4171abc2c28c4386056db046947a87
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -86,7 +86,7 @@ MonoBehaviour:
   lastModified: 637090829760908968
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7288881999974136159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   Path: event:/Joueur/Craft/Poison
   guid: 158f193d00a6d746b3657c47250c5d71
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
   Path: event:/Joueur/Loot
   guid: ee853e71a592e04dbd83e7d358fdbe7f
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
   Path: event:/Joueur/Craft/Explosif
   guid: 704f0ac89e47a046bc5ee0fd0f909e33
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: GarbageSoundv1/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637090829761048999
+  lastModified: 637090843219495560
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -191,7 +191,7 @@ MonoBehaviour:
   Path: "event:/Projectiles/Lanc\xE9"
   guid: 41c7c4286203c446a58afeae2e4f4e18
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -214,7 +214,7 @@ MonoBehaviour:
   Path: event:/Joueur/Craft/Boue
   guid: ab4ae19f9be3bf4fa77fb2d06c51df0b
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -222,6 +222,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-4067580898766311553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637090843219315534
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-3745233048032373413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,10 +255,10 @@ MonoBehaviour:
   Path: "event:/Musique/Th\xE8me"
   guid: 46d074b18952414da072473062bfef75
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
@@ -260,7 +278,7 @@ MonoBehaviour:
   Path: event:/Tourelle/Destruction
   guid: 3f84a39eb2770445ac7d7adfc938e9fb
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -283,7 +301,7 @@ MonoBehaviour:
   Path: event:/Tourelle/Construction
   guid: 3f456ef23f17dc40bad345150897b68c
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -306,7 +324,7 @@ MonoBehaviour:
   Path: event:/Projectiles/Destruction/Basique
   guid: 218279579cffa545b06e0c40d1ef39f9
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -346,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4978967763756956447}
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   EditorEvents:
   - {fileID: -7288881999974136159}
   - {fileID: -1754291019523312795}
@@ -368,10 +386,10 @@ MonoBehaviour:
   - {fileID: -9122189445631927819}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   StringsBanks:
   - {fileID: -4978967763756956447}
-  stringsBankWriteTime: 637090829761048999
+  stringsBankWriteTime: 637090843219495560
   cacheVersion: 3
 --- !u!114 &138073553808599694
 MonoBehaviour:
@@ -388,7 +406,7 @@ MonoBehaviour:
   Path: event:/Joueur/Craft/Distance
   guid: 9553054636a88f42a8cf03df7f5e0124
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -411,7 +429,7 @@ MonoBehaviour:
   Path: "event:/Ennemis/A\xE9rien/Mort"
   guid: d7ce5da730c8af48bf636a377a7ae03d
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -434,7 +452,7 @@ MonoBehaviour:
   Path: event:/Projectiles/Destruction/Distance
   guid: f85cec7c3fe2644a8844c00aefdad0c7
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -457,7 +475,7 @@ MonoBehaviour:
   Path: event:/Projectiles/Destruction/Boue
   guid: 4d3239c52247bc47bb2888f091de0ca4
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -498,7 +516,7 @@ MonoBehaviour:
   Path: "event:/Projectiles/Destruction/A\xE9rien"
   guid: 7720a78bf7d5784a9c4969cb86b5c739
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -521,7 +539,7 @@ MonoBehaviour:
   Path: event:/Ennemis/Terrestre/Mort
   guid: 6308bb43215ca744ad3357011f097ee4
   Banks:
-  - {fileID: -8266194356041772740}
+  - {fileID: -4067580898766311553}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
