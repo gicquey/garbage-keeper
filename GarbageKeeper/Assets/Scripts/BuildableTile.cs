@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class BuildableTile : MonoBehaviour
 {
-    private Tourelle _turretOnTile;
+    private GameObject _turretOnTile;
     private Material material;
     private Color initialColor;
     private bool _pointerOnTile;
@@ -51,7 +51,7 @@ public class BuildableTile : MonoBehaviour
             if (DebugManager.Instance.gameObject.activeSelf && _turretOnTile != null && DebugManager.Instance.showRangeAroundTurrets)
             {
                 Gizmos.color = Color.cyan;
-                Gizmos.DrawWireSphere(this.transform.position, _turretOnTile.GetRange());
+                Gizmos.DrawWireSphere(this.transform.position, Settings.Instance.turretsNormalRange);
             }
         }
     }
@@ -60,7 +60,7 @@ public class BuildableTile : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && GameManager.Instance.CanBuyTurret() && (_turretOnTile == null))
         {
-            _turretOnTile = ((GameObject)Instantiate(Resources.Load("Prefabs/Turret"))).GetComponent<Tourelle>();
+            _turretOnTile = ((GameObject)Instantiate(Resources.Load("Prefabs/Turret")));
             _turretOnTile.transform.position = this.transform.position;
             GameManager.Instance.BuyTurret();
         }
