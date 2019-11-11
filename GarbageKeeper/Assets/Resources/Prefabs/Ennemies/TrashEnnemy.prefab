@@ -427,9 +427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ennemyType: 0
-  maxLifeMultiplier: 2
-  baseSpeedMultiplier: 1
-  _currentLife: 91
+  maxLifeMultiplier: 3
+  baseSpeedMultiplier: 0.5
+  _currentLife: 0
 --- !u!1 &7902059328190518813
 GameObject:
   m_ObjectHideFlags: 0
