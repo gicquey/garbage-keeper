@@ -22,6 +22,7 @@ public class MainScene : MonoBehaviour
         foreach (Transform child in tilesRoot)
             Destroy(child.gameObject);
         GenerateMap();
+        StartCoroutine(GiveMoneyEverySecond());
     }
 
     private IEnumerator GiveMoneyEverySecond()
