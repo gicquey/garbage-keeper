@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{542ee4af-6797-47fc-be4e-7f89587a6c7a}">
+		<property name="assetPath">
+			<value>SD/Munitions/Bouillasse/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5b10754c-0b05-48e9-bc0a-45001e6d0008}</destination>
+		</relationship>
+	</object>
+</objects>

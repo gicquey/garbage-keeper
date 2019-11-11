@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 1414130778962348667}
   - component: {fileID: -3012983401913380870}
   - component: {fileID: -4504941671059370876}
-  - component: {fileID: 1893126370}
+  - component: {fileID: 3270025150766005325}
+  - component: {fileID: -2213479647392282270}
+  - component: {fileID: 4526823535710152477}
   m_Layer: 0
   m_Name: BatteryProjectile
   m_TagString: Projectile
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 690235453047318675}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 4.664, y: 1, z: 10}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -94,8 +96,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690235453047318675}
   m_Mesh: {fileID: 1491185527073844151, guid: 40bcee48dfd228f45a24902640f884ba, type: 3}
---- !u!65 &1893126370
-BoxCollider:
+--- !u!114 &3270025150766005325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690235453047318675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: "event:/Projectiles/Lanc\xE9"
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &-2213479647392282270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690235453047318675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Projectiles/Destruction/Distance
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!136 &4526823535710152477
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,6 +152,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.116301015, y: 0.11060889, z: 0.2172449}
+  m_Radius: 0.10862245
+  m_Height: 0.11060889
+  m_Direction: 1
   m_Center: {x: 0, y: 0.0000000037252925, z: 0.10862245}

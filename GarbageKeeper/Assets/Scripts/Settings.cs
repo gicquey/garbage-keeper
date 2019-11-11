@@ -30,7 +30,7 @@ public class Settings
 
     public float lifeMax = 100f;
     public float lifeLostPerEnnemy = 2f;
-    public float baseEnnemyMaxLife = 20f;
+    public float baseEnnemyMaxLife = 50f;
     public float baseEnnemyMoveSpeed = 0.005f;
     public enum AmmoType
     {
@@ -64,12 +64,12 @@ public class Settings
 
     public Dictionary<AmmoType, float> DamageByAmmoType = new Dictionary<AmmoType, float>()
     {
-        {AmmoType.regular, 2f },
-        {AmmoType.explosive, 2f },
-        {AmmoType.poison, 2f },
-        {AmmoType.puddle, 2f },
-        {AmmoType.clothes, 2f },
-        {AmmoType.battery, 3f }
+        {AmmoType.regular, 1f },
+        {AmmoType.explosive, 1f },
+        {AmmoType.poison, 1f },
+        {AmmoType.puddle, 1f },
+        {AmmoType.clothes, 1f },
+        {AmmoType.battery, 1f }
     };
 
     public float damageOverTimeDamageByActivation = 10f;

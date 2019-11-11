@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2960434838495642216}
+  - component: {fileID: -117751523404157102}
+  - component: {fileID: -2943257599866998098}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -32,6 +34,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-117751523404157102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547536601312768923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Tourelle/Construction
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!114 &-2943257599866998098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547536601312768923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Tourelle/Destruction
+  PlayEvent: 2
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1850859698970348498
 GameObject:
   m_ObjectHideFlags: 0
@@ -82,7 +130,7 @@ MonoBehaviour:
   projectilSpawn: {fileID: 2972406791915560620}
   poubelleAnimator: {fileID: 3468869190356061446}
   ammoTypeFeedBack: {fileID: 191296790728400199}
-  regular: {fileID: 21300000, guid: 17e6bbfd67fbf51429c2b76f88974224, type: 3}
+  regular: {fileID: 21300000, guid: 9c2178fd55000b94fae8584289bfd064, type: 3}
   battery: {fileID: 21300000, guid: 8bca1e223e61c3d42ad157f1b311bfa7, type: 3}
   clothes: {fileID: 21300000, guid: f9bf76b367e622a4eb5db74257ad78b2, type: 3}
   explosive: {fileID: 21300000, guid: a5937eaa4310f194986b0d7a78d2ad4f, type: 3}
@@ -376,11 +424,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: corps-poubelle
       objectReference: {fileID: 0}
-    - target: {fileID: -1504981713932161579, guid: 29358b1aa3b64404db0b86f158b2b5af,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7bb692d216900384691ed47a3fd8ce98, type: 2}
     - target: {fileID: -4216859302048453862, guid: 29358b1aa3b64404db0b86f158b2b5af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -436,6 +479,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 29358b1aa3b64404db0b86f158b2b5af,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7bb692d216900384691ed47a3fd8ce98, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29358b1aa3b64404db0b86f158b2b5af, type: 3}
 --- !u!4 &5229679397381903953 stripped
@@ -462,6 +510,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: couvercle-poubelle
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: f38c436cbc3caff46bf4d5f78dae0f86,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 233257521c26a73489f02ccd6055ba06, type: 2}
     - target: {fileID: -4216859302048453862, guid: f38c436cbc3caff46bf4d5f78dae0f86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -522,11 +575,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 94d3e440bc51c1e4cb0610aa0e10697e, type: 2}
-    - target: {fileID: -6057140222963153312, guid: f38c436cbc3caff46bf4d5f78dae0f86,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 233257521c26a73489f02ccd6055ba06, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38c436cbc3caff46bf4d5f78dae0f86, type: 3}
 --- !u!4 &6821235895114195068 stripped
