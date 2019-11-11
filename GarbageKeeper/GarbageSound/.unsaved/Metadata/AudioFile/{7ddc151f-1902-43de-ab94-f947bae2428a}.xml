@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{7ddc151f-1902-43de-ab94-f947bae2428a}">
+		<property name="assetPath">
+			<value>SD/Joueur/Loot/Déchet 2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.15594104308390022</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5b10754c-0b05-48e9-bc0a-45001e6d0008}</destination>
+		</relationship>
+	</object>
+</objects>
