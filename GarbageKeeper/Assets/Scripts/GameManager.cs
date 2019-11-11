@@ -14,12 +14,12 @@
     }
 
     public int CurrentMoney { get; private set; }
-    private float _currentLife = 0;
+    public float CurrentLife  { get; private set;}
 
     private GameManager()
     {
         CurrentMoney = Settings.Instance.initialMoney;
-        _currentLife = Settings.Instance.lifeMax;
+        CurrentLife = Settings.Instance.lifeMax;
     }
 
     public bool CanBuyTurret()
@@ -47,9 +47,9 @@
 
     public void LoseLife(float amount)
     {
-        _currentLife -= amount;
+        CurrentLife -= amount;
         mainScene.RefreshLifeIndicator();
-        if(_currentLife < 0)
+        if(CurrentLife < 0)
         {
             //Game over
         }
