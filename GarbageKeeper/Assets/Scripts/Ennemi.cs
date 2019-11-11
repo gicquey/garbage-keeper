@@ -79,7 +79,7 @@ public class Ennemi : MonoBehaviour
     private void ApplyEffects()
     {
         var effectTypesToApplyThisFrame = new List<EffectTypes>();
-        foreach (var entry in _timesSinceEffectActivations.ToList()) //Modifying inside loop, so we use a copy
+        foreach (var entry in _timesSinceEffectActivations.ToList().Where(testedEntry => _currentEffects.Exists(effect => effect.EffectType == testedEntry.Key))) //Modifying inside loop, so we use a copy
         {
             _timesSinceEffectActivations[entry.Key] = entry.Value + Time.deltaTime;
             if(_timesSinceEffectActivations[entry.Key] >= Settings.Instance.TimeBetweenActivationsByEffectType[entry.Key])
@@ -117,11 +117,13 @@ public class Ennemi : MonoBehaviour
             case Settings.AmmoType.poison :
                 SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.IMPACT_POISON));
                 _currentEffects.Add(new Effect(EffectTypes.DAMAGE_OVER_TIME));
+                _timesSinceEffectActivations[EffectTypes.DAMAGE_OVER_TIME] = Settings.Instance.TimeBetweenActivationsByEffectType[EffectTypes.DAMAGE_OVER_TIME];
                 break;
 
             case Settings.AmmoType.puddle:
                 _currentEffects.Add(new Effect(EffectTypes.SLOW_DOWN));
                 SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.IMPACT_PUDDLE));
+                _timesSinceEffectActivations[EffectTypes.SLOW_DOWN] = Settings.Instance.TimeBetweenActivationsByEffectType[EffectTypes.SLOW_DOWN];
                 break;
 
             case Settings.AmmoType.explosive:
@@ -180,7 +182,7 @@ public class Ennemi : MonoBehaviour
     private void ReachPathEnd()
     {
         SoundHelper.Instance.play(AudioConfig.Instance.GetClipForSoundType(SoundTypes.DIE_END));
-        EnnemyGenerator.Instance.NotifyDeadEnnemy(this);
+        WaveManager.Instance.RemoveEnnemy(this);
         _dying = true;
         this.GetComponent<Animator>().SetTrigger("DyingEnd");
         _nextCheckpoint = null;
