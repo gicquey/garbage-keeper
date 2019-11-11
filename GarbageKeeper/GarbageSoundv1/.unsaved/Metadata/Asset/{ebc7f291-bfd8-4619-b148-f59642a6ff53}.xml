@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{ebc7f291-bfd8-4619-b148-f59642a6ff53}">
+		<property name="assetPath">
+			<value>SD/Munitions/Aérien/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5b10754c-0b05-48e9-bc0a-45001e6d0008}</destination>
+		</relationship>
+	</object>
+</objects>
