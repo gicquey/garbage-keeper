@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{80f0e4a6-99ad-4cce-8888-79cd846c3828}">
+		<property name="assetPath">
+			<value>SD/Ennemis/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5b10754c-0b05-48e9-bc0a-45001e6d0008}</destination>
+		</relationship>
+	</object>
+</objects>
