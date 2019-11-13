@@ -37,7 +37,16 @@ public class Feedback : MonoBehaviour
     public void Load(Settings.Elements elementType, int amount)
     {
         icon.sprite = spritesPerElementType[(int)elementType];
-        text.text = "+ " + amount.ToString();
+        if(amount > 0)
+        {
+            text.text = "+" + amount.ToString();
+            text.color = Color.green;
+        }
+        else
+        {
+            text.text = amount.ToString();
+            text.color = Color.red;
+        }
     }
 
     public void OrderMoveUp()

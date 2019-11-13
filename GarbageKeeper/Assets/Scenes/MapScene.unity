@@ -1705,15 +1705,15 @@ MonoBehaviour:
   resultBasicSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   resourceImages:
   - ammoType: 1
-    sprite: {fileID: 21300000, guid: 82332cc6f6b0d50439682b3271bf95f8, type: 3}
+    sprite: {fileID: 21300000, guid: a5937eaa4310f194986b0d7a78d2ad4f, type: 3}
   - ammoType: 2
-    sprite: {fileID: 21300000, guid: 1161759de5f49af4296693848beafb76, type: 3}
+    sprite: {fileID: 21300000, guid: 5eeee93fb26b78b408b5ef94aab34f2c, type: 3}
   - ammoType: 3
-    sprite: {fileID: 21300000, guid: 6cbcc772d1873ae4dbc97035a8a5932b, type: 3}
+    sprite: {fileID: 21300000, guid: 81e9756cab43d0a4ca4957434917000e, type: 3}
   - ammoType: 4
-    sprite: {fileID: 21300000, guid: 82eb9740a46404841af8ed06544d74d6, type: 3}
+    sprite: {fileID: 21300000, guid: f9bf76b367e622a4eb5db74257ad78b2, type: 3}
   - ammoType: 5
-    sprite: {fileID: 21300000, guid: d16fa2c22f3b37245834c12e83b24a5d, type: 3}
+    sprite: {fileID: 21300000, guid: 8bca1e223e61c3d42ad157f1b311bfa7, type: 3}
 --- !u!4 &1361713387
 Transform:
   m_ObjectHideFlags: 0
@@ -2442,6 +2442,12 @@ PrefabInstance:
       propertyPath: timeBetweenWaves
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7250302988236153064, guid: 61ebbd6734062eb499ef47be666cd629,
+        type: 3}
+      propertyPath: waves.Array.data[0].waveContent.Array.data[0]
+      value: 
+      objectReference: {fileID: 8207184636825682021, guid: 3b57ed8ac67eedb489989c49ae399edb,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61ebbd6734062eb499ef47be666cd629, type: 3}
 --- !u!1 &1895949311
