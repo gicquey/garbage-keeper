@@ -16,7 +16,7 @@ MonoBehaviour:
   guid: ff6528e42a43c145861107e1952a6992
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -40,7 +40,7 @@ MonoBehaviour:
   guid: 4575d5cd749e7f4ead67adac096871d1
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -64,7 +64,7 @@ MonoBehaviour:
   guid: de4171abc2c28c4386056db046947a87
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -90,6 +90,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7588548518736901904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097249300060362
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-7288881999974136159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +124,7 @@ MonoBehaviour:
   guid: 158f193d00a6d746b3657c47250c5d71
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -130,7 +148,7 @@ MonoBehaviour:
   guid: ee853e71a592e04dbd83e7d358fdbe7f
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -154,7 +172,7 @@ MonoBehaviour:
   guid: 704f0ac89e47a046bc5ee0fd0f909e33
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -176,11 +194,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: GarbageSoundv1/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637090844377598693
+  lastModified: 637097249300204811
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1548
+    Value: 1644
   Exists: 1
 --- !u!114 &-4654441329193070310
 MonoBehaviour:
@@ -198,7 +216,7 @@ MonoBehaviour:
   guid: 41c7c4286203c446a58afeae2e4f4e18
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -222,7 +240,7 @@ MonoBehaviour:
   guid: ab4ae19f9be3bf4fa77fb2d06c51df0b
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -248,6 +266,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3769639454629646788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097226565132339
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-3745233048032373413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,14 +300,14 @@ MonoBehaviour:
   guid: 46d074b18952414da072473062bfef75
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 138947
+  Length: 128842
 --- !u!114 &-3150404863589117542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +324,7 @@ MonoBehaviour:
   guid: 3f84a39eb2770445ac7d7adfc938e9fb
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -312,7 +348,7 @@ MonoBehaviour:
   guid: 3f456ef23f17dc40bad345150897b68c
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -336,7 +372,7 @@ MonoBehaviour:
   guid: 218279579cffa545b06e0c40d1ef39f9
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -380,6 +416,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-20424586652266163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097226508732735
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -4978967763756956447}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   EditorEvents:
   - {fileID: -7288881999974136159}
   - {fileID: -1754291019523312795}
@@ -416,10 +470,10 @@ MonoBehaviour:
   - {fileID: -9122189445631927819}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   StringsBanks:
   - {fileID: -4978967763756956447}
-  stringsBankWriteTime: 637090844377598693
+  stringsBankWriteTime: 637097249300204811
   cacheVersion: 3
 --- !u!114 &138073553808599694
 MonoBehaviour:
@@ -437,7 +491,7 @@ MonoBehaviour:
   guid: 9553054636a88f42a8cf03df7f5e0124
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -445,6 +499,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &1144622558355112664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097218183513894
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &1659998011673759670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +533,7 @@ MonoBehaviour:
   guid: d7ce5da730c8af48bf636a377a7ae03d
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -469,6 +541,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &2006052050468990400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097174361922854
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &2786063623442100459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +575,7 @@ MonoBehaviour:
   guid: f85cec7c3fe2644a8844c00aefdad0c7
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -509,7 +599,7 @@ MonoBehaviour:
   guid: 4d3239c52247bc47bb2888f091de0ca4
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -517,6 +607,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1625
+--- !u!114 &3558495646666860252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097176262816830
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &5296000255058001679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,7 +677,7 @@ MonoBehaviour:
   guid: 7720a78bf7d5784a9c4969cb86b5c739
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -593,7 +701,7 @@ MonoBehaviour:
   guid: 6308bb43215ca744ad3357011f097ee4
   Banks:
   - {fileID: -504202371674337540}
-  - {fileID: 7255804837201438452}
+  - {fileID: -7588548518736901904}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -601,3 +709,39 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &8901813954930864798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097174112942467
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &9002655488792694587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GarbageSoundv1/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637097196258067282
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
